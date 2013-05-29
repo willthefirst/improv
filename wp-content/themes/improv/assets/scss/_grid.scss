@@ -67,63 +67,7 @@ so these classes can be used on non-block-level elements. */
 	width: auto;
 }
 
-/* Medium-sized grid. */
-@media only screen and (min-width: 760px) and (max-width: 1025px) {
-	.grid {
-		width: 700px;
-	}
-	/* Apply to classes that contain c6- or c4- */
-	[class*="c6-"],
-	[class*="c4-"] {
-		margin-left: 20px;
-	}
-	/* sixths */
-	.c6-1,.c6-2,.c6-3,.c6-4,.c6-5,.c6-6 { width: 100px; }
-	/* quarters */
-	.c4-1,.c4-2,.c4-3,.c4-4 { width: 160px; }
-	/* thirds */
-	.c6-12,.c6-23,.c6-34,.c6-45,.c6-56 { width: 220px; }
-	/* halves */
-	.c4-12,.c4-23,.c4-34,
-	.c6-123,.c6-234,.c6-345,.c6-456 { width: 340px; }
-	/* two-thirds */
-	.c6-1234,.c6-2345,.c6-3456 { width: 460px; }
-	/* three-quarters */
-	.c4-123,.c4-234 { width: 520px; }
-	/* five-sixths */
-	.c6-12345,.c6-23456 { width: 580px; }
-}
 
-/* Single-column mobile
-Get rid of widths and floats, go to fluid single column. */
-@media only screen and (max-width: 759px) {
-	.grid,
-	/* Apply to classes that contain c6- or c4- */
-	[class*="c6-"],
-	[class*="c4-"] {
-		display: block;
-		float: none;
-		margin-left: 0;
-		width: auto;
-	}
-}
-
-/* zeroing out leftmost .unit margins */
-[class*="c6-1"],
-[class*="c4-1"] {
-	margin-left: 0;
-}
-/* zeroing out leftmost nested .unit margins */
-[class*="c6-2"] [class*="c6-2"],
-[class*="c6-3"] [class*="c6-3"],
-[class*="c6-4"] [class*="c6-4"],
-[class*="c6-5"] [class*="c6-5"],
-[class*="c6-6"] [class*="c6-6"],
-[class*="c4-2"] [class*="c4-2"],
-[class*="c4-3"] [class*="c4-3"],
-[class*="c4-4"] [class*="c4-4"] {
-	margin-left: 0;
-}
 
 /** grid utilities
  -------------------------------------------------- */

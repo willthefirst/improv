@@ -11,7 +11,7 @@
 // **********************************************************************
 // This program is distributed in the hope that it will be useful, but
 // WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // **********************************************************************
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
@@ -20,16 +20,22 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 get_header();
 ?>
 
-<div id="primary" class="c6-1234">
+<a class="banner c4-1234">
+	<img src="IMPROV_TEST" alt="IMPROV_TEST">
+	<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+</a>
+<div class="row feeds">
+	<section class="c6-34">
+		<h2>Our Blog</h2></section>
+	<section class="c6-56">
+		<h2>Our Videos</h2></section>
+	<section class="c6-12">
+		<h2>Our Tweets</h2></section>
+</div>
+<div class="row sponsors">
+	<p>Sponsors in here.</p>
+</div>
 
 <?php
-cfct_loop();
-cfct_misc('nav-posts');
-?>
-
-</div><!-- #primary -->
-
-<?php
-get_sidebar();
 get_footer();
 ?>

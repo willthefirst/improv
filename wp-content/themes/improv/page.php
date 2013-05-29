@@ -11,7 +11,7 @@
 // **********************************************************************
 // This program is distributed in the hope that it will be useful, but
 // WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // **********************************************************************
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
@@ -24,11 +24,9 @@ get_header();
 	<?php
 	// For the loop used, look in /loops
 	cfct_loop();
-	comments_template();
 	?>
 </div><!-- #primary -->
 
-<?php 
-get_sidebar();
+<?php
 get_footer();
 ?>
