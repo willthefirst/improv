@@ -67,7 +67,22 @@ so these classes can be used on non-block-level elements. */
 	width: auto;
 }
 
-
+/* zeroing out leftmost .unit margins */
+[class*="c6-1"],
+[class*="c4-1"] {
+	margin-left: 0;
+}
+/* zeroing out leftmost nested .unit margins */
+[class*="c6-2"] [class*="c6-2"],
+[class*="c6-3"] [class*="c6-3"],
+[class*="c6-4"] [class*="c6-4"],
+[class*="c6-5"] [class*="c6-5"],
+[class*="c6-6"] [class*="c6-6"],
+[class*="c4-2"] [class*="c4-2"],
+[class*="c4-3"] [class*="c4-3"],
+[class*="c4-4"] [class*="c4-4"] {
+	margin-left: 0;
+}
 
 /** grid utilities
  -------------------------------------------------- */

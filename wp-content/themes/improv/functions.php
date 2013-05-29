@@ -94,7 +94,7 @@ if (! function_exists('cfct_theme_setup')) {
 		 * Add post formats
 		 */
 		$custom_header_args = array(
-			'width'         => 800,
+			'width'         => 966,
 			'height'        => 340,
 			'default-image' => get_stylesheet_directory_uri() . '/assets/img/banner1.gif',
 			'uploads'       => true,
