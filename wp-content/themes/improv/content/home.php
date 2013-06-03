@@ -16,13 +16,12 @@
 
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
-
-get_header();
 ?>
 
 <a class="banner c4-1234">
 	<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 </a>
+
 <div class="row feeds">
 	<section class="c6-12">
 		<h2>Our Tweets</h2>
@@ -37,6 +36,20 @@ get_header();
 	<h2>Our Sponsors</h1>
 </div>
 
-<?php
-get_footer();
-?>
+
+<article id="post-<?php the_ID() ?>" <?php post_class(); ?>>
+	<div class="entry-header">
+		<?php the_title('<h1 class="entry-title">', '</h1>') ?>
+	</div>
+	<div class="entry-content">
+		<?php
+			the_content('<span class="more-link">'.__('Continued&hellip;', 'carrington-blueprint').'</span>');
+			$args = array(
+				'before' => '<p class="pages-link">'. __('Pages: ', 'carrington-blueprint'),
+				'after' => "</p>\n",
+				'next_or_number' => 'number'
+			);
+			wp_link_pages($args);
+		?>
+	</div><!--.entry-content-->
+</article>
