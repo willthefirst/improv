@@ -127,6 +127,11 @@ function cfct_widgets_init() {
 		'id' => 'sidebar-default',
 		'name' => __('Default Sidebar', 'carrington-blueprint'),
 	)));
+
+	register_sidebar(array_merge($sidebar_defaults, array(
+		'id' => 'sidebar-tumblr',
+		'name' => __('Tumblr Sidebar', 'carrington-blueprint'),
+	)));
 }
 add_action( 'widgets_init', 'cfct_widgets_init' );
 

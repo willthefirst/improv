@@ -25,7 +25,9 @@ get_header();
 		<?php fb_feed(); ?>
 	</section>
 	<section class="c6-56">
-		<h2>and Tumblr.</h2></section>
+		<h2>and Tumblr.</h2>
+		<?php get_sidebar('tumblr'); ?>
+	</section>
 </div>
 <div class="row sponsors">
 	<h2>Our Sponsors</h1>
