@@ -17,13 +17,15 @@ get_header();
 
 <div class="row feeds">
 	<section class="c6-12">
-		<h2>Our Tweets</h2>
-		<?php echo do_shortcode('[twitter-feed username="DnvrImprovFest" id="12345" mode="feed"]'); ?>
+		<h2>We're on Twitter.</h2>
+		<?php echo do_shortcode('[twitter-feed username="DnvrImprovFest" id="341622008112615424" mode="feed"]'); ?>
 	</section>
 	<section class="c6-34">
-		<h2>Our Blog</h2></section>
+		<h2>and Facebook too.</h2>
+		<?php fb_feed(); ?>
+	</section>
 	<section class="c6-56">
-		<h2>Our Videos</h2></section>
+		<h2>and Tumblr.</h2></section>
 </div>
 <div class="row sponsors">
 	<h2>Our Sponsors</h1>
