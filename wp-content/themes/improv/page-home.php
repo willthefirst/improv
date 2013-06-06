@@ -30,7 +30,8 @@ get_header();
 	</section>
 </div>
 <div class="row sponsors">
-	<h2>Our Sponsors</h1>
+	<h2>Our Sponsors</h2>
+	<?php echo sponsors_carousel(); ?>
 </div>
 
 <?php
