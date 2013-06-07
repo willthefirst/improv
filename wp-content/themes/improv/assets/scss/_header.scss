@@ -4,35 +4,55 @@
 
 /** Masthead
  -------------------------------------------------- */
+
 #masthead {
 	margin-bottom: 30px;
-
-	#site-name {
-	}
 }
+
+#site-name {
+	margin-top: 0;
+	float: left;
+}
+
+.logo {
+	display: block;
+	background: url('../img/logo.png') no-repeat;
+	-webkit-background-size: auto 100%;
+	-moz-background-size: auto 100%;
+	background-size: auto 100%;
+	text-indent: -9999em;
+	height: 100px;
+	width: 300px;
+}
+
+.share-section {
+	height: 100px;
+	width: 300px;
+	background-color: #ccc;
+	float: right;
+ }
 
 /* 	Main Navigation
 	------------------------------------------------------- */
 #nav-main {
-	border-bottom: 1px solid #ddd;
-	border-top: 1px solid #ddd;
+	font-family: 'oswaldbook';
+	font-size: 24px;
+	line-height: 30px;
 	padding: 8px 0;
+	letter-spacing: 0.05em;
 	width: 100%;
 	display: block;
 	float: left;
-
+	text-transform: uppercase;
 	a {
 		display: block;
 		float: left;
+		text-decoration: none;
 	}
 
 	ul {
 		display: block;
 		float: left;
-	}
-
-	&> ul {
-		border-left: 1px solid #ddd;
 	}
 
 	li {
@@ -49,7 +69,6 @@
 		}
 
 		a {
-			border-right: 1px solid #ddd;
 			line-height: 2em;
 			padding: 0 10px;
 		}

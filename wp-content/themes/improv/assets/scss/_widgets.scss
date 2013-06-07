@@ -2,7 +2,65 @@
 // Sidebar, Widgets
 // --------------------------------------------------
 
-.widget {
+%feed-item-spacing {
+	margin-bottom: 12px;
+	padding: 6px;
 }
-.widget-title {
+
+.feeds {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+%home-feeds {
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.widget-title {
+		display: none;
+	}
+}
+
+// Twitter plugin widget
+
+.widget_twitter {
+	@extend %home-feeds;
+
+	ul {
+		li {
+			@extend %feed-item-spacing;
+		}
+	}
+}
+
+// Tumblr plugin widget
+
+.Tumblr {
+	@extend %home-feeds;
+
+	ul {
+		li {
+			@extend %feed-item-spacing;
+		}
+	}
+}
+
+
+// Facebook plugin widget
+
+.fb-feed {
+	padding: 0;
+}
+
+.fb-page-name {
+	display: none;
+}
+
+.fb-feed-item {
+	border: none;
+	@extend %feed-item-spacing;
+
 }

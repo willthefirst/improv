@@ -37,7 +37,10 @@ $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
 
 <div class="container grid">
 	<header id="masthead" class="site-header clearfix">
-			<h1 id="site-name"><a href="<?php echo home_url('/'); ?>" title="<?php _e('Home', 'carrington-blueprint'); ?>"><?php bloginfo('name'); ?></a></h1>
+			<h1 id="site-name"><a class="logo" href="<?php echo home_url('/'); ?>" title="<?php _e('Denver Improv Festival Home', 'carrington-blueprint'); ?>"><?php bloginfo('name'); ?></a></h1>
+			<div class="share-section">
+				SHARE SECTION HERE (FACEBOOK, TWITTER, TUMBLR)
+			</div>
 			<nav id="nav-main" role="navigation">
 				<?php wp_nav_menu( array(
 					'container' => '',

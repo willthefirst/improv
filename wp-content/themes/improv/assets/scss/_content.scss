@@ -1,5 +1,55 @@
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
+body {
+	font-family: 'cartogothic_stdregular';
+	font-size: 20px;
+	line-height: 28px;
+}
+
+h1, h2, h3, h4, h5 {
+	color: $blue-dark;
+}
+
+h1 {
+	font-family: 'oswaldbook';
+	font-size: 42px;
+	line-height: 50px;
+}
+
+h2 {
+	font-family: 'oswaldlight';
+	font-size: 36px;
+	line-height: 44px;
+}
+
+h3 {
+	font-family: 'oswaldlight';
+	font-size: 28px;
+	line-height: 36px;
+}
+
+h4 {
+	font-family: 'oswaldbook';
+	font-size: 20px;
+	line-height: 28px;
+}
+
+em {
+	font-family: cartogothic_stditalic;
+}
+
+a, a:visited {
+	color: $blue-dark;
+	-webkit-transition: .1s color linear;
+	-moz-transition: .1s color linear;
+	-ms-transition: .1s color linear;
+	-o-transition: .1s color linear;
+	transition: .1s color linear;
+
+	&:hover {
+		color: $blue-light;
+	}
+}
 
 /** Posts Default
  -------------------------------------------------- */

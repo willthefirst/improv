@@ -18,7 +18,7 @@ get_header();
 <div class="row feeds">
 	<section class="c6-12">
 		<h2>We're on Twitter.</h2>
-		<?php echo do_shortcode('[twitter-feed username="DnvrImprovFest" id="341622008112615424" mode="feed"]'); ?>
+		<?php get_sidebar('twitter'); ?>
 	</section>
 	<section class="c6-34">
 		<h2>and Facebook too.</h2>

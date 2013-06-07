@@ -33,7 +33,7 @@
 }
 
 .jcarousel-skin-tango .jcarousel-item-horizontal {
-	margin: 0 10px;
+	margin  : 0 10px;
 }
 
 .jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
@@ -54,13 +54,15 @@
  *  Horizontal Buttons
  */
 .jcarousel-skin-tango .jcarousel-next-horizontal {
-    position: absolute;
-    top: 43px;
-    right: 15px;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    background: transparent url(next-horizontal.png) no-repeat 0 0;
+   cursor: pointer;
+   position: absolute;
+   top: 43px;
+   right: 5px;
+   width: 0px;
+   height: 0px;
+   border-style: solid;
+   border-width: 12px 0 12px 15px;
+   border-color: transparent transparent transparent #000000;
 }
 
 .jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-next-horizontal {
@@ -87,13 +89,13 @@
 }
 
 .jcarousel-skin-tango .jcarousel-prev-horizontal {
+    cursor: pointer;
     position: absolute;
     top: 43px;
     left: 5px;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    background: transparent url(prev-horizontal.png) no-repeat 0 0;
+     border-style: solid;
+    border-width: 12px 15px 12px 0px;
+    border-color: transparent #000000 transparent transparent ;
 }
 
 .jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-prev-horizontal {
