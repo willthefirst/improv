@@ -21,11 +21,11 @@ get_header();
 		<?php get_sidebar('twitter'); ?>
 	</section>
 	<section class="c6-34">
-		<h2>and Facebook too.</h2>
+		<h2>and Facebook.</h2>
 		<?php fb_feed(); ?>
 	</section>
 	<section class="c6-56">
-		<h2>and Tumblr.</h2>
+		<h2>and Tumblr too.</h2>
 		<?php get_sidebar('tumblr'); ?>
 	</section>
 </div>

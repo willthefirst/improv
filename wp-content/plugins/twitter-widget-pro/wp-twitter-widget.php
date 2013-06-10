@@ -896,10 +896,10 @@ class wpTwitterWidget extends RangePlugin {
 				$widgetContent .= $this->_buildLink( $tweet->ago, $linkAttrs );
 				$widgetContent .= '</span>';
 
-				if ( 'true' != $args['hidefrom'] ) {
-					$from = sprintf( __( 'from %s', $this->_slug ), str_replace( '&', '&amp;', $tweet->source ) );
-					$widgetContent .= " <span class='from-meta'>{$from}</span>";
-				}
+				// if ( 'true' != $args['hidefrom'] ) {
+				// 	$from = sprintf( __( 'from %s', $this->_slug ), str_replace( '&', '&amp;', $tweet->source ) );
+				// 	$widgetContent .= " <span class='from-meta'>{$from}</span>";
+				// }
 				if ( !empty( $tweet->in_reply_to_screen_name ) ) {
 					$rtLinkText = sprintf( __( 'in reply to %s', $this->_slug ), $tweet->in_reply_to_screen_name );
 					$widgetContent .=  ' <span class="in-reply-to-meta">';
@@ -912,31 +912,31 @@ class wpTwitterWidget extends RangePlugin {
 				}
  				$widgetContent .= '</span>';
 
-				if ( 'true' == $args['showintents'] ) {
-					$widgetContent .= ' <span class="intent-meta">';
-					$lang = $this->_getTwitterLang();
-					if ( !empty( $lang ) )
-						$linkAttrs['data-lang'] = $lang;
+				// if ( 'true' == $args['showintents'] ) {
+				// 	$widgetContent .= ' <span class="intent-meta">';
+				// 	$lang = $this->_getTwitterLang();
+				// 	if ( !empty( $lang ) )
+				// 		$linkAttrs['data-lang'] = $lang;
 
-					$linkText = __( 'Reply', $this->_slug );
-					$linkAttrs['href'] = "http://twitter.com/intent/tweet?in_reply_to={$tweet->id_str}";
-					$linkAttrs['class'] = 'in-reply-to';
-					$linkAttrs['title'] = $linkText;
-					$widgetContent .= $this->_buildLink( $linkText, $linkAttrs );
+				// 	$linkText = __( 'Reply', $this->_slug );
+				// 	$linkAttrs['href'] = "http://twitter.com/intent/tweet?in_reply_to={$tweet->id_str}";
+				// 	$linkAttrs['class'] = 'in-reply-to';
+				// 	$linkAttrs['title'] = $linkText;
+				// 	$widgetContent .= $this->_buildLink( $linkText, $linkAttrs );
 
-					$linkText = __( 'Retweet', $this->_slug );
-					$linkAttrs['href'] = "http://twitter.com/intent/retweet?tweet_id={$tweet->id_str}";
-					$linkAttrs['class'] = 'retweet';
-					$linkAttrs['title'] = $linkText;
-					$widgetContent .= $this->_buildLink( $linkText, $linkAttrs );
+				// 	$linkText = __( 'Retweet', $this->_slug );
+				// 	$linkAttrs['href'] = "http://twitter.com/intent/retweet?tweet_id={$tweet->id_str}";
+				// 	$linkAttrs['class'] = 'retweet';
+				// 	$linkAttrs['title'] = $linkText;
+				// 	$widgetContent .= $this->_buildLink( $linkText, $linkAttrs );
 
-					$linkText = __( 'Favorite', $this->_slug );
-					$linkAttrs['href'] = "http://twitter.com/intent/favorite?tweet_id={$tweet->id_str}";
-					$linkAttrs['class'] = 'favorite';
-					$linkAttrs['title'] = $linkText;
-					$widgetContent .= $this->_buildLink( $linkText, $linkAttrs );
-					$widgetContent .= '</span>';
-				}
+				// 	$linkText = __( 'Favorite', $this->_slug );
+				// 	$linkAttrs['href'] = "http://twitter.com/intent/favorite?tweet_id={$tweet->id_str}";
+				// 	$linkAttrs['class'] = 'favorite';
+				// 	$linkAttrs['title'] = $linkText;
+				// 	$widgetContent .= $this->_buildLink( $linkText, $linkAttrs );
+				// 	$widgetContent .= '</span>';
+				// }
 				$widgetContent .= '</li>';
 
 				if ( ++$count >= $args['items'] )

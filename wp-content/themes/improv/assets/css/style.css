@@ -650,7 +650,7 @@ Example usage: .grid.hideoverflow. */
 /** Masthead
  -------------------------------------------------- */
 #masthead {
-  margin-bottom: 30px; }
+  margin-bottom: 12px; }
 
 #site-name {
   margin-top: 0;
@@ -678,7 +678,7 @@ Example usage: .grid.hideoverflow. */
   font-family: 'oswaldbook';
   font-size: 24px;
   line-height: 30px;
-  padding: 8px 0;
+  padding: 0;
   letter-spacing: 0.05em;
   width: 100%;
   display: block;
@@ -767,11 +767,11 @@ a, a:visited {
  -------------------------------------------------- */
 .widget_twitter ul li, .Tumblr ul li, .fb-feed-item {
   margin-bottom: 12px;
-  padding: 6px; }
+  padding: 6px 10px; }
 
 .feeds {
   font-size: 16px;
-  line-height: 24px; }
+  line-height: 22px; }
 
 .widget_twitter ul, .Tumblr ul {
   list-style: none;
@@ -780,6 +780,20 @@ a, a:visited {
 .widget_twitter .widget-title, .Tumblr .widget-title {
   display: none; }
 
+.widget_twitter ul {
+  color: #333; }
+  .widget_twitter ul li {
+    background-color: #9AE4E8; }
+.widget_twitter .entry-meta {
+  display: block; }
+
+.Tumblr ul {
+  color: #F7F7F7; }
+  .Tumblr ul a {
+    color: #F7F7F7; }
+  .Tumblr ul li {
+    background-color: #2c4762; }
+
 .fb-feed {
   padding: 0; }
 
@@ -787,4 +801,6 @@ a, a:visited {
   display: none; }
 
 .fb-feed-item {
-  border: none; }
+  border: none;
+  background-color: #3b5998;
+  color: #F7F7F7; }

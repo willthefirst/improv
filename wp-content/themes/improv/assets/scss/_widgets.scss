@@ -4,12 +4,12 @@
 
 %feed-item-spacing {
 	margin-bottom: 12px;
-	padding: 6px;
+	padding: 6px 10px;
 }
 
 .feeds {
 	font-size: 16px;
-	line-height: 24px;
+	line-height: 22px;
 }
 
 %home-feeds {
@@ -30,9 +30,15 @@
 	@extend %home-feeds;
 
 	ul {
+		color: #333;
 		li {
 			@extend %feed-item-spacing;
+			background-color: #9AE4E8;
 		}
+	}
+
+	.entry-meta {
+		display: block;
 	}
 }
 
@@ -42,8 +48,15 @@
 	@extend %home-feeds;
 
 	ul {
+		color: #F7F7F7;
+
+		a {
+			color: #F7F7F7;
+		}
+
 		li {
 			@extend %feed-item-spacing;
+			background-color: #2c4762;
 		}
 	}
 }
@@ -61,6 +74,8 @@
 
 .fb-feed-item {
 	border: none;
+	background-color: #3b5998;
+	color: #F7F7F7;
 	@extend %feed-item-spacing;
 
 }
