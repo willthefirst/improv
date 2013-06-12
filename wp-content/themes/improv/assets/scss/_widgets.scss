@@ -18,56 +18,28 @@
 	padding: 0;
 }
 
-.fb-page-name {
-	display: none;
-}
-
 $fb_date_w : 100px;
 $fb_date_h: 100px;
 
+.fb-feed {
+	@extend .clearfix;
+}
 .fb-feed-item {
-		border: none;
 	@extend %feed-item-spacing;
 	position: relative;
 	margin-left: $fb_date_w;
-	float: right;
-	width: $full-width - ($fb_date_w + 40);
-	min-height: 80px;
-	border-left: 2px solid $blue-light;
+	width: $full-width - 300;
+	border: 1px solid #aaa;
 	color: $blue-dark;
+	background-color: #ddd;
+	margin: auto;
 
-	.fb-date {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-		border-radius: 230px;
-		position: absolute;
-		display: table;
-		width: $fb_date_w;
-		height: $fb_date_h;
-		text-align: center;
-		top: 50%;
-		margin-bottom: 0;
-		margin-top: -$fb_date_h/2;
-		left: -($fb_date_w + 20);
-		border: 2px solid $blue-light;
-
-		a {
-			color: $blue-light;
-			display: table-cell;
-			vertical-align: middle;
-			text-decoration: none;
-			font-family: 'oswald_stencilregular';
-			font-size: 18px;
-		}
-
-	}
 	blockquote {
 		font-size: 14px;
 		line-height: 20px;
 		margin: auto;
 		display: block;
+		background-color: #eee;
 	}
 }
 

@@ -16,8 +16,8 @@ get_header();
 </a>
 
 <div class="row feeds">
-	<section class="c4-1234">
-		<h2>Talk of the town</h2>
+	<section class="c4-1234 clearfix">
+		<h2>What We're Saying</h2>
 		<?php fb_feed(); ?>
 	</section>
 </div>

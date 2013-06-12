@@ -55,6 +55,9 @@
   font-weight: normal;
   font-style: normal; }
 
+#nav-main li, #nav-main .nav-apply {
+  border-radius: 4px; }
+
 /*
  * HTML5 Boilerplate
  *
@@ -567,14 +570,14 @@ Example usage: .grid.hideoverflow. */
   visibility: hidden; }
 
 /* Contain floats: h5bp.com/q */
-.clearfix:before, .clearfix:after {
+.clearfix:before, .fb-feed:before, .clearfix:after, .fb-feed:after {
   content: "";
   display: table; }
 
-.clearfix:after {
+.clearfix:after, .fb-feed:after {
   clear: both; }
 
-.clearfix {
+.clearfix, .fb-feed {
   *zoom: 1; }
 
 /* 	Other Non-semantic Helpers
@@ -653,24 +656,25 @@ Example usage: .grid.hideoverflow. */
   margin-bottom: 12px; }
 
 #site-name {
-  margin-top: 0;
+  margin: 0;
   float: left; }
 
 .logo {
   display: block;
-  background: url("../img/logo.png") no-repeat;
-  -webkit-background-size: auto 100%;
-  -moz-background-size: auto 100%;
-  background-size: auto 100%;
-  text-indent: -9999em;
-  height: 100px;
-  width: 300px; }
+  background: url("../img/header.png") no-repeat;
+  width: 966px;
+  height: 247px;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+  text-indent: -9999em; }
 
 .share-section {
   height: 100px;
   width: 300px;
   background-color: #ccc;
-  float: right; }
+  float: right;
+  display: none; }
 
 /* 	Main Navigation
 	------------------------------------------------------- */
@@ -690,13 +694,20 @@ Example usage: .grid.hideoverflow. */
     text-decoration: none; }
   #nav-main ul {
     display: block;
-    float: left; }
+    position: relative; }
   #nav-main li {
     position: relative;
     display: block;
-    float: left; }
+    float: left;
+    -webkit-transition: 0.1s linear all;
+    -moz-transition: 0.1s linear all;
+    -o-transition: 0.1s linear all;
+    -ms-transition: 0.1s linear all;
+    transition: 0.1s linear all; }
     #nav-main li:hover {
-      background: #f6f6f6; }
+      background-color: #AED5FF; }
+      #nav-main li:hover a {
+        color: inherit; }
       #nav-main li:hover > ul {
         display: block; }
     #nav-main li a {
@@ -715,6 +726,22 @@ Example usage: .grid.hideoverflow. */
         #nav-main li ul li a {
           float: none;
           border: 0; }
+  #nav-main .nav-apply {
+    float: right;
+    font-family: oswaldbold;
+    background-color: #ff7140;
+    position: absolute;
+    right: 0;
+    border: 2px solid #943305; }
+    #nav-main .nav-apply:hover {
+      background-color: #ff7140;
+      padding: 50px 30px;
+      top: -50px;
+      right: -30px;
+      border-radius: 80px;
+      color: #943305; }
+    #nav-main .nav-apply a {
+      color: #fff; }
 
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
@@ -776,43 +803,17 @@ a, a:visited {
 .fb-feed {
   padding: 0; }
 
-.fb-page-name {
-  display: none; }
-
 .fb-feed-item {
-  border: none;
   position: relative;
   margin-left: 100px;
-  float: right;
-  width: 826px;
-  min-height: 80px;
-  border-left: 2px solid #0088ac;
-  color: #293950; }
-  .fb-feed-item .fb-date {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    border-radius: 230px;
-    position: absolute;
-    display: table;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    top: 50%;
-    margin-bottom: 0;
-    margin-top: -50px;
-    left: -120px;
-    border: 2px solid #0088ac; }
-    .fb-feed-item .fb-date a {
-      color: #0088ac;
-      display: table-cell;
-      vertical-align: middle;
-      text-decoration: none;
-      font-family: 'oswald_stencilregular';
-      font-size: 18px; }
+  width: 666px;
+  border: 1px solid #aaa;
+  color: #293950;
+  background-color: #ddd;
+  margin: auto; }
   .fb-feed-item blockquote {
     font-size: 14px;
     line-height: 20px;
     margin: auto;
-    display: block; }
+    display: block;
+    background-color: #eee; }

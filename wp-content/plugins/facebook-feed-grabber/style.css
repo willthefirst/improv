@@ -17,13 +17,10 @@ p.fb-page-name {
 	text-align: left;
 }
 .fb-feed-item {
-	margin: 8px 0px;
+	margin: 0 auto 24px;
 	padding-top: 5px;
 }
-.fb-feed-item:first-child {
-	border: 0px;
-	margin-top: 4px;
-}
+
 .fb-feed-item p.message {
 	margin-top: 4px;
 	text-align: left;

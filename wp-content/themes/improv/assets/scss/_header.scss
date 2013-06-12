@@ -10,19 +10,19 @@
 }
 
 #site-name {
-	margin-top: 0;
+	margin: 0;
 	float: left;
 }
 
 .logo {
 	display: block;
-	background: url('../img/logo.png') no-repeat;
-	-webkit-background-size: auto 100%;
-	-moz-background-size: auto 100%;
-	background-size: auto 100%;
+	background: url('../img/header.png') no-repeat;
+	width: $full-width;
+	height: 247px;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	background-size: 100% auto;
 	text-indent: -9999em;
-	height: 100px;
-	width: 300px;
 }
 
 .share-section {
@@ -30,6 +30,8 @@
 	width: 300px;
 	background-color: #ccc;
 	float: right;
+
+	display: none;
  }
 
 /* 	Main Navigation
@@ -52,17 +54,22 @@
 
 	ul {
 		display: block;
-		float: left;
+		position: relative;
 	}
 
 	li {
 		position: relative;
 		display: block;
 		float: left;
+		@extend %border-radius;
+		@include transition(0.1s linear all);
 
 		&:hover {
-			background: #f6f6f6;
+			background-color: #AED5FF;
 
+			a {
+				color: inherit;
+			}
 			&> ul {
 				display: block;
 			}
@@ -93,4 +100,34 @@
 
 		}
 	}
+
+	$bigger-circle-padding-h: 50px;
+	$bigger-circle-padding-w: 30px;
+	$bigger-circle-border-color: #943305;
+
+	.nav-apply {
+		float: right;
+		font-family: oswaldbold;
+		background-color: $orange;
+		@extend %border-radius;
+		position: absolute;
+		right: 0;
+		border: 2px solid $bigger-circle-border-color;
+
+		&:hover {
+			background-color: $orange;
+			padding: $bigger-circle-padding-h $bigger-circle-padding-w;
+			top: -($bigger-circle-padding-h);
+			right: -($bigger-circle-padding-w);
+			border-radius: $bigger-circle-padding-w + $bigger-circle-padding-h;
+
+			color: $bigger-circle-border-color;
+		}
+
+		a {
+			color: #fff;
+		}
+	}
 }
+
+
