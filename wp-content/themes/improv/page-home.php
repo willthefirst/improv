@@ -16,17 +16,9 @@ get_header();
 </a>
 
 <div class="row feeds">
-	<section class="c6-12">
-		<h2>We're on Twitter.</h2>
-		<?php get_sidebar('twitter'); ?>
-	</section>
-	<section class="c6-34">
-		<h2>and Facebook.</h2>
+	<section class="c4-1234">
+		<h2>Talk of the town</h2>
 		<?php fb_feed(); ?>
-	</section>
-	<section class="c6-56">
-		<h2>and Tumblr too.</h2>
-		<?php get_sidebar('tumblr'); ?>
 	</section>
 </div>
 <div class="row sponsors">

@@ -5,12 +5,12 @@ Plugin URI: http://wordpress.org/extend/plugins/facebook-feed-grabber/
 Description: Allows you to display the feed of a public page or profile on your website. Requires that you create a Facebook Application. Only works with profiles that have public content. To set your App ID & Secret as well as other settings go to <a href="options-general.php?page=facebook-feed-grabber/ffg-options.php">Settings &rarr; Facebook Feed Grabber</a>.
 Version: 0.8.1
 Author: Lucas Bonner
-Author URI: http://www.lucasbonner.com 
+Author URI: http://www.lucasbonner.com
 License: GPLv2 or Later
 
  *
  * Tested and Developed with php 5
- * 
+ *
  * Uses facebook/php-sdk v3.2.2
  * http://github.com/facebook/php-sdk/
  *
@@ -20,51 +20,51 @@ License: GPLv2 or Later
  * Copyright 2011 Lucas Bonner.
  *
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License, version 2, as 
+ * it under the terms of the GNU General Public License, version 2, as
  * published by the Free Software Foundation.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 /* - - - - - -
-	
+
 	Class containing plugin setup and deactivation stuff.
-	
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 class ffg_setup {
-	
+
 
 	// Current plugin version
 	protected $version = '0.8.1';
-	
+
 	// For the defaults. (Look in $this->__construct())
 	public $defaults = false;
-	
+
 	// Will be true if the SDK has been loaded.
 	private $sdk_loaded = false;
-	
+
 
 	/* - - - - - -
-		
+
 		Set the default settings.
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function __construct(  ) {
-		
-				
+
+
 		// The defaults
 		$this->defaults = array(
 			// Facebook App ID & Secret
 			'app_id' => null,
 			'secret' => null,
-		
+
 			// Misc Settings
 			'default_feed' => null,
 			'show_title' => 1,
@@ -76,101 +76,101 @@ class ffg_setup {
 			'show_thumbnails' => 1,
 			'style_sheet' => 'style.css',
 			'delete_options' => 0,
-		
+
 			// Current Version
 			'version' => $this->version
 		);
-		
+
 		if ( ! wp_mkdir_p($this->defaults['cache_folder']) ) {
 			$this->defaults['cache_feed'] = 0;
-			
+
 			// Tell wp of the error (wp 3+)
 			if ( function_exists('add_settings_error') )
 				add_settings_error( 'ffg_cache_folder', 'cache-folder', __('We were unable to create directory '. $this->defaults['cache_folder'] .' which would be used for caching the feed to reduce page load time. Check to see if it\'s parent directory writable by the server?') );
 		}
-		
+
 	}
-	
-	
+
+
 	/* - - - - - -
-		
+
 		Define default options
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function activate() {
-	
+
 		// Get stored plugin options
 		$options = get_option('ffg_options');
-				
+
 		// If there aren't already settings defined then set the defaults.
 	    if( !is_array($options) ) {
-		
+
 			$options = $this->defaults;
-		
+
 		// If the defined settings aren't for this version add any new settings.
 		} else if ( $options['version'] != $this->version) {
 			$options = array_merge($this->defaults, $options);
 		}
-		
+
 		$options['version'] = $this->version;
-	
+
 		update_option('ffg_options', $options);
 	}
 
-	
+
 	/* - - - - - -
-		
+
 		Delete ffg options if 'restore_defaults' is true
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function deactivate(  ) {
-	
+
 		$options = get_option('ffg_options');
-	
+
 		if ( $options['delete_options'] )
 			delete_option('ffg_options');
-	
+
 	}
-	
-	
+
+
 	/* - - - - - -
-		
+
 		Starts a session if it isn't already done.
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function sessionStart() {
 	    if( !session_id() )
 			session_start();
 	}
-	
-	
+
+
 	/* - - - - - -
-		
+
 		Destroy the session.
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function sessionDestroy() {
 	    session_destroy();
 	}
-	
-	
+
+
 	/* - - - - - -
-		
+
 		loads facebook SDK
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function load_sdk() {
-		
+
 		if ( $this->sdk_loaded )
 			return true;
-		
-		// 
+
+		//
 		// Get the facebook sdk
 		if ( ! class_exists('Facebook') )
 			require_once 'facebook-sdk/facebook.php';
-		
+
 		$this->sdk_loaded = true;
-		
+
 		return true;
 	}
 
@@ -188,7 +188,7 @@ add_action('wp_logout', array($ffg_setup, 'sessionDestroy'));
 add_action('wp_login', array($ffg_setup, 'sessionDestroy'));
 
 
-// 
+//
 // Get the options page stuff if in the admin area.
 if ( is_admin() )
 	include 'ffg-options.php';
@@ -197,25 +197,25 @@ if ( is_admin() )
 include_once 'ffg-widgets.php';
 
 /* - - - - - -
- 
+
  A class to display a wordpress feed.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 class ffg {
-	
+
 	/* - - - Beginning of settings - - - */
-	
+
 	// Required settings
-	
+
 	// Your app id
 	protected $appId = null;
-	
+
 	// You app secret.
 	protected $secret = null;
-	
+
 	// Settings retrieved from the options page.
 	public $options = false;
-		
+
 	// Date formats for event times.
 	public $date_formats = array(
 		// Event date formats
@@ -233,20 +233,20 @@ class ffg {
 	);
 
 	/* - - - End of settings - - - */
-	
+
 	// Our facebook connection gets stored here.
 	public $facebook = false;
-	
-	
+
+
 	/* - - - - - -
 
 		Fetches facebook app_id and secret and makes a new connection.
 
 	- - - - - - - - - - - - - -3 - - - - - - - - - - - - - - - - - - */
 	function __construct( $appId = null, $secret = null ) {
-		
+
 		$this->options = get_option('ffg_options');
-		
+
 		// See if we're getting the default App Id.
 		if ( $appId == null )
 			$appId = $this->options['app_id'];
@@ -262,80 +262,80 @@ class ffg {
 		// See if we have a Secret
 		if ( $secret == null )
 			return false;
-		
+
 		$this->appId = $appId;
 		$this->secret = $secret;
-		
+
 		$this->authenticate();
-		
+
 		if ( $this->facebook === false )
 			return false;
 		else
 			return $this;
 	}
 	// End __construct()
-	
-	
+
+
 	/* - - - - - -
-		
+
 		Authenticate App Id and Secret and make initial connection.
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function authenticate(  ) {
-		
+
 		// Check that we have an App ID
 		if ( $this->appId == null )
 			return false;
-		
+
 		// Check that we have a secret
 		if ( $this->secret == null )
 			return false;
-		
+
 		// Load the facebook SDK.
 		global $ffg_setup;
 		$ffg_setup->load_sdk();
-				
+
 		// Make our facebook connection.
 		$this->facebook = new Facebook(array(
 			  'appId'  => $this->appId,
 			  'secret' => $this->secret,
 			));
-		
+
 		// Proxy support
 		if ( isset($this->options['proxy_url']) && !empty($this->options['proxy_url']) ) {
 			Facebook::$CURL_OPTS[CURLOPT_PROXY] = $this->options['proxy_url'];
 		}
-		
+
 		if ( $this->facebook === false )
 			return false;
 		else
 			return $this;
 	}
 	// End authenticate()
-	
-	
+
+
 	/* - - - - - -
-		
+
 		Looks to see if $text is a date in one of the following formats,
 			-Tomorrow at 5:00pm
 			-Wednesday at 5:00pm
 			-Wednesday, August 24 at 5:00pm
 			-Wednesday, August 24, 2011 at 5:00pm
-			
-		Returns false if it is not a date, if is a date the it returns it in a string that strtotime() will recognize. 
-		
+
+		Returns false if it is not a date, if is a date the it returns it in a string that strtotime() will recognize.
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function is_date( $text ) {
-		
+
 		// Days for preg_match regular expression
 		$days = "(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)";
 		// Months for preg_match regular expression
 		$months = "(January|February|March|April|May|June|July|August|September|October|November|December)";
-		
+
 		// 	if ( preg_match([Tomorrow at time], $text) )
 		if ( preg_match("/^Tomorrow at ([1-9]|1[012]):([0-6][0-9])(am|pm)$/i", $text, $date) )
 			$date = "Tomorrow {$date[1]}:{$date[2]}{$date[3]}";
-		
+
 		// if ( preg_match([day at time], $text) )
 		elseif ( preg_match("/^$days at ([1-9]|1[012]):([0-6][0-9])(am|pm)$/i", $text, $date) )
 			$date = "{$date[1]} {$date[2]}:{$date[3]}{$date[4]}";
@@ -343,38 +343,38 @@ class ffg {
 		// if ( preg_match([day, month day at time], $text) )
 		elseif ( preg_match("/^$days, $months ([0-9]|[12][0-9]|3[01]) at ([1-9]|1[012]):([0-6][0-9])(am|pm)$/i", $text, $date) )
 			$date = "{$date[2]} {$date[3]} {$date[4]}:{$date[5]}{$date[6]}";
-		
-		
+
+
 		// if ( preg_match([day, month day, year at time], $text) )
 		elseif ( preg_match("/^$days, $months ([0-9]|[12][0-9]|3[01]), (20[0-9][0-9]) at ([1-9]|1[012]):([0-6][0-9])(am|pm)$/i", $text, $date) )
 			$date = "{$date[2]} {$date[3]}, {$date[4]} {$date[5]}:{$date[6]}{$date[7]}";
-		
+
 		else
 			return false;
-		
+
 		return $date;
-		
+
 	}
 	// End is_date()
-	
-	
+
+
 	/* - - - - - -
-		
+
 		$published = The time to format
 		$format = Defaults to feed which means it'll expect a unix timestamp in the first parameter $published. If set to 'event' it will assume we were fed a string that strtotime() will interpret.
-		
+
 		Uses the date formats defined in $this->date_formats[$format] for the output.
-		
+
 		Returns false on failure of formated string on success.
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function format_date( $published, $format = 'feed' ) {
 		global $wp_local;
-	
+
 		switch ( $format ) {
-			
+
 			case 'event':// {
-				
+
 				$timestamp = strtotime($published);
 
 				// If we couln't make a unix timestamp
@@ -382,56 +382,56 @@ class ffg {
 					return false;
 				else
 					$published = $timestamp;
-				
+
 				// Get the date formats
 				$date_formats = $this->date_formats['event'];
 
 				break;
 			// }
-				
+
 			case 'feed':
 			default:
-			
+
 				// Get the date formats
 				$date_formats = $this->date_formats['feed'];
 
 				break;
-				
+
 		}
-		
+
 		/*
 			LBTD : Make timezone based on if user is logged into facebook and use that timezone?
 		*/
-	
+
 		// Convert to our wp timezone
 		$published = $published + ( get_option( 'gmt_offset' ) * 3600 );
-		
+
 		if ( date_i18n('Ymd', $published) == date_i18n('Ymd') )
 			$published = date_i18n( $date_formats['today'], $published );
-			
+
 		else if ( date_i18n('Y', $published) == date_i18n('Y') )
 			$published = date_i18n( $date_formats['this_year'], $published );
-			
+
 		else
 			$published = date_i18n( $date_formats['other_year'], $published );
-		
+
 		return $published;
 	}
 	// End format_date()
 
-	
+
 	/* - - - - - -
-		
+
 		Retrieves a feed ID if given a facebook nickname or validates a feed id if givin a number.
-		
+
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 	function validate_feed( $feed ) {
-		
+
 		// TODO
-		
+
 	}
 	// End validate_feed()
-	
+
 	/* - - - - - -
 
 		Retrieves a public page's news feed and by default echos it.
@@ -443,10 +443,10 @@ class ffg {
 		$args	-optional	default: array()
 			| below are the possible arguments to change and the default values.
 			| array(
-				
+
 				~ Cache duration in minutes. To disable set as 0.
 				  'cache_feed' => $this->options['cache_feed'],
-				
+
 				~ The container to put the results in. If it's null no container will be used.
 				  'container' => 'div',
 
@@ -458,19 +458,19 @@ class ffg {
 
 				~ Whether to echo or return the results.
 				  'echo' => true,
-				
+
 				~ Whether to limit the display to posts posted by the page who's feed is being retrieved.
 				  'limit' => $this->options['limit'],
 
 				~ Whether to show the page title before the feed.
 				  'show_title' => true
-				
+
 				~ Display thumbnails. (TRUE or FALSE)
 				  'show_thumbnails' => $this->options['show_thumbnails'],
 
 				~ The maximum number of items to display.
 				  'maxitems' => $this->options['num_entries'],
-				
+
 			),
 
 
@@ -491,7 +491,7 @@ class ffg {
 		// If args were provided in a query style string.
 		if ( is_string($args) )
 			parse_str($args, $args);
-		
+
 		// Default arguments
 		$defaults = array(
 			'cache_feed' => $this->options['cache_feed'],
@@ -507,22 +507,22 @@ class ffg {
 
 		// Overwrite the defaults and exract our arguments.
 		extract( array_merge($defaults, $args) );
-		
+
 		// Get the feed (maybe it's cached?)
 		if ( $cache_feed != 0 ) {
-			
+
 			// Include cache class
 			include_once 'caching.php';
-			
+
 			// Initiate class
 			$cache = new ffg_cache();
 
 			// Let it do it's magic. (Will return the needed content)
 			$content = $cache->theMagic(&$this, '/'. $feed_id .'/feed?date_format=U', (($cache_feed * 60)));
-			
+
 		} else
 			$content = $this->facebook->api('/'. $feed_id .'/feed?date_format=U');
-			
+
 		if ( $content && count($content['data']) > 0 ) {
 
 			// Output string
@@ -551,16 +551,16 @@ class ffg {
 				}
 
 			}
-						
+
 			foreach($content['data'] as $item) {
-				
+
 				if ( empty($item) )
 					continue;
-				
+
 				if ( isset($item['status_type']) && $item['status_type'] == 'approved_friend' )
 					continue;
-				
-								
+
+
 				// If we're limiting it to posts from the retrieved page
 				if ( $limit == true ) {
 
@@ -585,35 +585,35 @@ class ffg {
 				$descript = isset($item['description']) ? trim($item['description']) : null;
 				// Turn urls into links and replace new lines with <br />
 				$descript = preg_replace(array('/((http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}\/\S*)/', '/\n/'), array("<a href='$1'>\\1</a>", '<br />'), $descript);
-				
+
 				// Get the description of item or the message of the one who posted the item
 				$story = isset($item['story']) ? trim($item['story']) : null;
 				$story = preg_replace('/\n/', '<br />', $story);
-				
+
 				// If it's an event…
 				if ( isset($item['properties']) ) {
 
 					$properties = null;
-					
+
 					foreach( $item['properties'] as $key => $property ) {
-						
+
 						$date = $this->is_date($property['text']);
-						
+
 						if ( $date != false ) {
-							
+
 							$date = $this->format_date($date, 'event');
 
 							$properties .= ( $date != false ) ? $date : $property['text'];
-							
+
 						} else
 							$properties .= $property['text'];
 
 							// If there's another line of text
 							if ( $key != (count($item['properties']) - 1) )
 								$properties .= "<br />";
-												
+
 					}// End foreach( $item['properties'] as $key => $property )
-				
+
 				// End if ( isset($item['properties']) )
 				} else
 					$properties = null;
@@ -635,85 +635,85 @@ class ffg {
 				/*
 					LBTD : If $descript is an event date it shows in the correct time by default but it does not account for daylight savings time? Fix this?
 				*/
-				
+
 				// The published date
 				$date = "<p class='fb-date'>";
-					$date .= "<a href='". $item_link ."' target='_blank' class='quiet' title='". __('See this post on Facebook') ."'>". $published . $comments ."</a>";
+					$date .= "<a href='". $item_link ."' target='_blank' class='quiet' title='". __('See this post on Facebook') ."'>". $published ."</a>";
 				$date .= "</p>\n";
-				
-				// 
+
+				//
 				// finish pieceing together the output.
-				// 
-				
+				//
+
 				// Item opening tag
-				$output .= "<div class='fb-feed-item fb-item-". $count ."' id='fb-feed-". $item['id'] ."'>\n";				
-					
+				$output .= "<div class='fb-feed-item fb-item-". $count ."' id='fb-feed-". $item['id'] ."'>\n";
+
 					// See if we should display who posted it
 					if ( $limit == false )
 						$output .= $from;
-					
+
 					// The actual users status
 					if ( $message != null  )
 						$output .= "<p class='message'>". $message ."</p>\n";
 					else if ( $story != null )
 						$output .= "<p class='story'>". $story ."</p>\n";
-					
+
 					// See if there's something like a link or video to show.
 					if ( isset($item['link']) || $descript != null || $properties != null ) {
-						
+
 						$output .= "<blockquote>\n";
-						
+
 							$output .= "<p>\n";
-							
+
 								if ( $show_thumbnails != false && isset($item['picture']) ) {
 									$img = "<img src='". htmlentities($item['picture']) ."' class='thumbnail alignleft' />\n";
 									if ( isset($item['link']) )
 										$output .= "<a href='". esc_attr($item['link']) ."' class='the_link'>$img</a>\n";
 								}
-								
+
 								// The item link
 								if ( isset($item['link']) && isset($item['name']) )
 									$output .= "<a href='". esc_attr($item['link']) ."' class='the_link'>". $item['name'] ."</a>\n";
-								
+
 							$output .= "</p>\n";
-								
+
 							// The item caption
 							if ( isset($item['caption']) ) {
 								if ( preg_match('/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/', $item['caption']) ) {
 									$caption = preg_replace('/^(?!https?:\/\/)/', 'http://', $item['caption']);
 									$caption = "<a href='". esc_attr($caption) ."'>". $item['caption'] ."</a>\n";
-									
+
 								} else
 									$caption = $item['caption'];
-									
+
 								$output .= "<p class='caption'>". $caption ."</p>\n";
-							}							
-							
+							}
+
 							if ( $descript != null || $properties != null ) {
-								
+
 								$output .= "<p>\n";
-														
+
 								if ( $descript != null )
 									$output .= "<span class='descript'>". $descript ."</span>\n";
-						
+
 								if ( $descript != null && $properties != null )
 									$output .= "<br /><br />";
 
 								if ( $properties != null )
 									$output .= $properties;
-								
+
 								$output .= "</p>\n";
-								
+
 							}
 
 						$output .= "</blockquote>\n";
-						
+
 					}
 
 					$output .= $date;
-				
+
 				$output .= "</div>\n";
-				
+
 				// Add one to our count tally
 				$count++;
 
@@ -737,60 +737,60 @@ class ffg {
 				return $output;
 			}
 
-		// end if count($content['data']) > 0	
+		// end if count($content['data']) > 0
 		} else
 			return false;
 	}
 	// End fb_feed()
-		
+
 }
 
 
 /* - - - - - -
-	
+
 	Used to display a feed without you having to mess with the class.
-	If you're displaying more than one feed I suggest using the class 
+	If you're displaying more than one feed I suggest using the class
 	and not this function.
-		
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 function fb_feed( $feed_id = null, $args = array() ) {
-	
+
 	$facebook = new ffg();
-	
+
 	$facebook = $facebook->feed($feed_id, $args);
-	
+
 	return $facebook;
-	
+
 }
 
 
 /* - - - - - -
-	
+
 	Add Shortcode tag.
-	
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 function fb_feed_shortcode( $args, $feed_id = null ) {
-	
+
 	$args['echo'] = false;
-	
+
 	$facebook = new ffg();
 	$facebook = $facebook->feed($feed_id, $args);
-	
+
 	return $facebook;
-	
+
 }
 add_shortcode('fb_feed', 'fb_feed_shortcode');
 
 
 /* - - - - - -
-	
+
 	Add default style
-	
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 function ffg_add_style() {
-	
+
 	$options = get_option('ffg_options');
-	
+
 	// See if we should show a style sheet.
 	if ( $options['style_sheet'] == false )
 		return false;

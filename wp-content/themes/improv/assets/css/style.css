@@ -765,34 +765,13 @@ a, a:visited {
  -------------------------------------------------- */
 /** WP Gallery
  -------------------------------------------------- */
-.widget_twitter ul li, .Tumblr ul li, .fb-feed-item {
+.fb-feed-item {
   margin-bottom: 12px;
   padding: 6px 10px; }
 
 .feeds {
   font-size: 16px;
   line-height: 22px; }
-
-.widget_twitter ul, .Tumblr ul {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-.widget_twitter .widget-title, .Tumblr .widget-title {
-  display: none; }
-
-.widget_twitter ul {
-  color: #333; }
-  .widget_twitter ul li {
-    background-color: #9AE4E8; }
-.widget_twitter .entry-meta {
-  display: block; }
-
-.Tumblr ul {
-  color: #F7F7F7; }
-  .Tumblr ul a {
-    color: #F7F7F7; }
-  .Tumblr ul li {
-    background-color: #2c4762; }
 
 .fb-feed {
   padding: 0; }
@@ -802,5 +781,38 @@ a, a:visited {
 
 .fb-feed-item {
   border: none;
-  background-color: #3b5998;
-  color: #F7F7F7; }
+  position: relative;
+  margin-left: 100px;
+  float: right;
+  width: 826px;
+  min-height: 80px;
+  border-left: 2px solid #0088ac;
+  color: #293950; }
+  .fb-feed-item .fb-date {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 230px;
+    position: absolute;
+    display: table;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    top: 50%;
+    margin-bottom: 0;
+    margin-top: -50px;
+    left: -120px;
+    border: 2px solid #0088ac; }
+    .fb-feed-item .fb-date a {
+      color: #0088ac;
+      display: table-cell;
+      vertical-align: middle;
+      text-decoration: none;
+      font-family: 'oswald_stencilregular';
+      font-size: 18px; }
+  .fb-feed-item blockquote {
+    font-size: 14px;
+    line-height: 20px;
+    margin: auto;
+    display: block; }

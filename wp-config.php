@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'improv');
+define('DB_NAME', 'denverimprovfest_zymichost_improv');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', '858720_admin');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'Difimprov12');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

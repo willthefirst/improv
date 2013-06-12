@@ -8,6 +8,8 @@
 
 /** grid foundation
  -------------------------------------------------- */
+$full-width: 966px;
+
 .grid {
 	margin: 0 auto;
 	/* this makes the page wide but keeps content away from the edge */
@@ -25,7 +27,7 @@
 /* Default large grid.
 Works fine with older browsers that don't support media queries. */
 .grid {
-	width: 966px;
+	width: $full-width;
 }
 /* Apply to classes that contain c6- or c4- */
 [class*="c6-"],
