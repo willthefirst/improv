@@ -51,38 +51,78 @@ a, a:visited {
 	}
 }
 
-/** Posts Default
- -------------------------------------------------- */
-.entry-header {
-}
-.entry-title {
-}
-.entry-date {
-}
-.entry-content {
-}
-.entry-meta {
+/* 	Events Page / Eventbrite
+	------------------------------------------------------- */
+
+.eb_event_list_item {
+	@extend .clearfix;
+	display: block;
+	background-color: #ccc;
+	margin-bottom: 24px;
+	padding: 12px;
+	@extend %border-radius;
 }
 
-/** Attachment Page
- -------------------------------------------------- */
-.attachment-header {
-}
-.attachment-content {
-}
-.attachment-prev {
-}
-.attachment-next {
+.wrapper-link {
+	text-decoration: none;
 }
 
+.eb_event_list_title {
+	margin: 0;
+	font-family: 'oswaldbook';
+	margin-bottom: 8px;
+}
 
-/** WP Gallery
- -------------------------------------------------- */
-.gallery-item {
+$eb_event_list_info_padding: 8px;
+
+%eb_event_list_info {
+	font-family: 'oswaldlight';
+	font-size: 24px;
+	padding-right: $eb_event_list_info_padding;
+	float: left;
+	margin-bottom: 8px;
 }
-.gallery-item .gallery-icon {
+
+%eb_event_list_info_divider {
+	padding-left: $eb_event_list_info_padding;
+	position: relative;
+	&:before {
+		content:'-';
+		position: absolute;
+		left: -$eb_event_list_info_padding + 5;
+		top: 0px;
+	}
+
 }
-.gallery-item .gallery-icon img {
+
+.eb_event_list_date {
+	@extend %eb_event_list_info;
 }
-.gallery-item .gallery-icon a {
+
+.eb_event_list_time {
+	@extend %eb_event_list_info;
+	@extend %eb_event_list_info_divider;
+}
+
+.eb_event_list_location {
+	@extend %eb_event_list_info;
+	@extend %eb_event_list_info_divider;
+}
+
+.eb_event_list_logo {
+	float: left;
+	margin: 0 18px 18px 0;
+}
+
+.eb_event_list_description {
+	clear: left;
+	font-family: cartogothic_stdregular;
+	font-size: 18px;
+	line-height: 28px;
+
+	span {
+		font-family: inherit !important; //Override raw data handed back from Eventbrite (spans with inline styles)
+		font-size: inherit !important; //Override raw data handed back from Eventbrite (spans with inline styles)
+	}
+
 }

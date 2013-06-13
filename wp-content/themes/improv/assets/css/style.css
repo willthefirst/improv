@@ -55,7 +55,7 @@
   font-weight: normal;
   font-style: normal; }
 
-#nav-main li, #nav-main .nav-apply {
+#nav-main li, #nav-main .nav-apply, .eb_event_list_item {
   border-radius: 4px; }
 
 /*
@@ -570,14 +570,14 @@ Example usage: .grid.hideoverflow. */
   visibility: hidden; }
 
 /* Contain floats: h5bp.com/q */
-.clearfix:before, .fb-feed:before, .clearfix:after, .fb-feed:after {
+.clearfix:before, .eb_event_list_item:before, .fb-feed:before, .clearfix:after, .eb_event_list_item:after, .fb-feed:after {
   content: "";
   display: table; }
 
-.clearfix:after, .fb-feed:after {
+.clearfix:after, .eb_event_list_item:after, .fb-feed:after {
   clear: both; }
 
-.clearfix, .fb-feed {
+.clearfix, .eb_event_list_item, .fb-feed {
   *zoom: 1; }
 
 /* 	Other Non-semantic Helpers
@@ -786,12 +786,51 @@ a, a:visited {
   a:hover, a:visited:hover {
     color: #0088ac; }
 
-/** Posts Default
- -------------------------------------------------- */
-/** Attachment Page
- -------------------------------------------------- */
-/** WP Gallery
- -------------------------------------------------- */
+/* 	Events Page / Eventbrite
+	------------------------------------------------------- */
+.eb_event_list_item {
+  display: block;
+  background-color: #ccc;
+  margin-bottom: 24px;
+  padding: 12px; }
+
+.wrapper-link {
+  text-decoration: none; }
+
+.eb_event_list_title {
+  margin: 0;
+  font-family: 'oswaldbook';
+  margin-bottom: 8px; }
+
+.eb_event_list_date, .eb_event_list_time, .eb_event_list_location {
+  font-family: 'oswaldlight';
+  font-size: 24px;
+  padding-right: 8px;
+  float: left;
+  margin-bottom: 8px; }
+
+.eb_event_list_time, .eb_event_list_location {
+  padding-left: 8px;
+  position: relative; }
+  .eb_event_list_time:before, .eb_event_list_location:before {
+    content: '-';
+    position: absolute;
+    left: -3px;
+    top: 0px; }
+
+.eb_event_list_logo {
+  float: left;
+  margin: 0 18px 18px 0; }
+
+.eb_event_list_description {
+  clear: left;
+  font-family: cartogothic_stdregular;
+  font-size: 18px;
+  line-height: 28px; }
+  .eb_event_list_description span {
+    font-family: inherit !important;
+    font-size: inherit !important; }
+
 .fb-feed-item {
   margin-bottom: 12px;
   padding: 6px 10px; }

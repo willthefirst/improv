@@ -11,11 +11,9 @@ get_header();
 
 ?>
 
-<div id="primary" class="c6-1234">
-	<?php
+	<h1>Tickets</h2>
 
-	// For the loop used, look in /loops
-	cfct_loop();
+	<?php
 
 	$search_params = array(
 	    'organizer' => 'Denver Improv Festival',
@@ -40,16 +38,22 @@ get_header();
 	    }else{
 	        $venue_name = 'online';
 	    }
-	    $event_html = "<a href='". $evnt->url. " class='eb_event_list_item' id='evnt_div_" . $evnt->id ."'>
-	    					<span class='eb_event_list_title'>".$evnt->title."</span>
+	    if(isset($evnt->logo)){
+	    	$logo = "<img class='eb_event_list_logo' src=".$evnt->logo." />";
+	    }
+	    else {
+	    	$logo = '';
+	    }
+	    $event_html = "<article class='eb_event_list_item' id='evnt_div_" . $evnt->id ."'><a href='". $evnt->url. "' class='wrapper-link'>
+	    					<h3 class='eb_event_list_title'>".$evnt->title."</h3>
 	    					<span class='eb_event_list_date'>". strftime('%a, %B %e', $time) . "</span>
 	    					<span class='eb_event_list_time'>". strftime('%l:%M %p', $time) . "</span>
-	    					<span class='eb_event_list_location'>". $venue_name . "</span>
-	    					<div class='eb_event_list_description'>
-	    						<img class='eb_event_list_logo' src=".$evnt->logo." />"
+	    					<span class='eb_event_list_location'>@ ". $venue_name . "</span>
+	    					<div class='eb_event_list_description'>"
+	    						. $logo
 	    						. $evnt->description .
 	    					"</div>
-	    			   </a>\n";
+	    			   </a></article>\n";
 	    return $event_html;
 	};
 
@@ -61,7 +65,6 @@ get_header();
 
 
 	?>
-</div><!-- #primary -->
 
 <?php
 get_footer();
