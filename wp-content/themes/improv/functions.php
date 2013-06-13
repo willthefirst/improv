@@ -164,3 +164,7 @@ function cfct_load_assets() {
 }
 add_action('wp_enqueue_scripts', 'cfct_load_assets');
 
+// Spin up Eventbrite API
+// App key available at https://www.eventbrite.com/api/key
+require 'api/eventbrite/Eventbrite.php';
+$eb_client = new Eventbrite( array('app_key'=>'NXCBW2AT4KVH4JPYZK'));
