@@ -7,6 +7,12 @@ Template Name: Eventbrite Listings
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 
+// Spin up Eventbrite API
+// App key available at https://www.eventbrite.com/api/key
+require 'api/eventbrite/Eventbrite.php';
+$eb_client = new Eventbrite( array('app_key'=>'NXCBW2AT4KVH4JPYZK',
+									'user_key'=>'130543362215202245325'));
+
 get_header();
 
 ?>
@@ -14,6 +20,15 @@ get_header();
 	<h1>Tickets</h2>
 
 	<?php
+
+
+	// $result = file_get_contents('https://www.eventbrite.com/json/event_search?app_key=NXCBW2AT4KVH4JPYZK'); echo $result;
+	?>
+
+
+	<?php
+
+
 
 	$search_params = array(
 	    'organizer' => 'Denver Improv Festival',

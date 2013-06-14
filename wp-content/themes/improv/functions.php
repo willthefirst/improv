@@ -163,8 +163,3 @@ function cfct_load_assets() {
 	wp_enqueue_script('iphone-scaling-fix', $cfct_assets_url . 'js/ios-orientationchange-fix.js', array(), CFCT_URL_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'cfct_load_assets');
-
-// Spin up Eventbrite API
-// App key available at https://www.eventbrite.com/api/key
-require 'api/eventbrite/Eventbrite.php';
-$eb_client = new Eventbrite( array('app_key'=>'NXCBW2AT4KVH4JPYZK'));
