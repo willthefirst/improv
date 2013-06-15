@@ -21,15 +21,6 @@ get_header();
 
 	<?php
 
-
-	// $result = file_get_contents('https://www.eventbrite.com/json/event_search?app_key=NXCBW2AT4KVH4JPYZK'); echo $result;
-	?>
-
-
-	<?php
-
-
-
 	$search_params = array(
 	    'organizer' => 'Denver Improv Festival',
 	    'sort_by' => 'date',
@@ -73,11 +64,7 @@ get_header();
 	};
 
 	$event_list_html = Eventbrite::eventList( $events, $custom_render_function	);
-
 	echo $event_list_html;
-
-
-
 
 	?>
 
