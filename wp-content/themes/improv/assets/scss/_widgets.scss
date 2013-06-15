@@ -4,12 +4,11 @@
 
 %feed-item-spacing {
 	margin-bottom: 12px;
-	padding: 6px 10px;
 }
 
 .feeds {
-	font-size: 16px;
-	line-height: 22px;
+	font-size: 18px;
+	line-height: 24px;
 }
 
 // Facebook plugin widget
@@ -28,10 +27,8 @@ $fb_date_h: 100px;
 	@extend %feed-item-spacing;
 	position: relative;
 	margin-left: $fb_date_w;
-	width: $full-width - 300;
-	border: 1px solid #aaa;
+	width: $full-width - 100;
 	color: $blue-dark;
-	background-color: #ddd;
 	margin: auto;
 
 	blockquote {
@@ -39,7 +36,13 @@ $fb_date_h: 100px;
 		line-height: 20px;
 		margin: auto;
 		display: block;
-		background-color: #eee;
+		background-color: #ddd;
+		border: 1px solid #aaa;
 	}
 }
+
+.fb-feed-item-main {
+	padding: 6px 10px;
+}
+
 

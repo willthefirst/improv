@@ -51,14 +51,16 @@ get_header();
 	    	$logo = '';
 	    }
 	    $event_html = "<article class='eb_event_list_item' id='evnt_div_" . $evnt->id ."'><a href='". $evnt->url. "' class='wrapper-link'>
-	    					<h3 class='eb_event_list_title'>".$evnt->title."</h3>
-	    					<span class='eb_event_list_date'>". strftime('%a, %B %e', $time) . "</span>
-	    					<span class='eb_event_list_time'>". strftime('%l:%M %p', $time) . "</span>
-	    					<span class='eb_event_list_location'>@ ". $venue_name . "</span>
-	    					<div class='eb_event_list_description'>"
-	    						. $logo
-	    						. $evnt->description .
-	    					"</div>
+	    					<div class='event-meta'>
+	    						<span class='eb_event_list_date'>". strftime('%a, %B %e', $time) . "</span><span class='eb_event_list_time'>". strftime('%l:%M %p', $time) . "</span><span class='eb_event_list_location'>@ ". $venue_name . "</span>
+	    					</div>
+	    					<div class='event-main'>
+	    						<h3 class='eb_event_list_title'>".$evnt->title."</h3>
+	    						<div class='eb_event_list_description'>"
+	    							. $logo
+	    							. $evnt->description .
+	    						"</div>
+	    					</div>
 	    			   </a></article>\n";
 	    return $event_html;
 	};

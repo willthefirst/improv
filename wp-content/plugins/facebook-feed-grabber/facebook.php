@@ -646,17 +646,25 @@ class ffg {
 				//
 
 				// Item opening tag
-				$output .= "<div class='fb-feed-item fb-item-". $count ."' id='fb-feed-". $item['id'] ."'>\n";
+				$output .= "<article class='fb-feed-item fb-item-". $count ."' id='fb-feed-". $item['id'] ."'>\n";
 
 					// See if we should display who posted it
 					if ( $limit == false )
 						$output .= $from;
 
+					$output .= $date;
+
+					//Another wrapper
+
+					$output .= "<div class='fb-feed-item-main'>";
+
 					// The actual users status
 					if ( $message != null  )
-						$output .= "<p class='message'>". $message ."</p>\n";
+						$output .= "<p class='message'>". linkify_html($message) ."</p>\n";
 					else if ( $story != null )
-						$output .= "<p class='story'>". $story ."</p>\n";
+						$output .= "<p class='story'>". linkify_html($story) ."</p>\n";
+
+					$output .= "</div>";
 
 					// See if there's something like a link or video to show.
 					if ( isset($item['link']) || $descript != null || $properties != null ) {
@@ -710,9 +718,7 @@ class ffg {
 
 					}
 
-					$output .= $date;
-
-				$output .= "</div>\n";
+				$output .= "</article>\n";
 
 				// Add one to our count tally
 				$count++;

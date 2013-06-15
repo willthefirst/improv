@@ -55,7 +55,7 @@
   font-weight: normal;
   font-style: normal; }
 
-#nav-main li, #nav-main .nav-apply, .eb_event_list_item {
+#nav-main li, #nav-main .nav-apply {
   border-radius: 4px; }
 
 /*
@@ -570,14 +570,14 @@ Example usage: .grid.hideoverflow. */
   visibility: hidden; }
 
 /* Contain floats: h5bp.com/q */
-.clearfix:before, .eb_event_list_item:before, .fb-feed:before, .clearfix:after, .eb_event_list_item:after, .fb-feed:after {
+.clearfix:before, .eb_event_list_item:before, .event-meta:before, .fb-feed:before, .clearfix:after, .eb_event_list_item:after, .event-meta:after, .fb-feed:after {
   content: "";
   display: table; }
 
-.clearfix:after, .eb_event_list_item:after, .fb-feed:after {
+.clearfix:after, .eb_event_list_item:after, .event-meta:after, .fb-feed:after {
   clear: both; }
 
-.clearfix, .eb_event_list_item, .fb-feed {
+.clearfix, .eb_event_list_item, .event-meta, .fb-feed {
   *zoom: 1; }
 
 /* 	Other Non-semantic Helpers
@@ -789,55 +789,56 @@ a, a:visited {
 /* 	Events Page / Eventbrite
 	------------------------------------------------------- */
 .eb_event_list_item {
-  display: block;
-  background-color: #ccc;
-  margin-bottom: 24px;
-  padding: 12px; }
+  display: block; }
 
 .wrapper-link {
   text-decoration: none; }
 
+.event-meta {
+  font-family: 'oswaldlight';
+  font-size: 24px;
+  margin-bottom: 8px;
+  width: 100px;
+  padding: 8px;
+  float: left;
+  background-color: green;
+  text-align: center; }
+
+.event-main {
+  background-color: #ccc;
+  margin-bottom: 24px;
+  float: right;
+  width: 850px; }
+
 .eb_event_list_title {
   margin: 0;
   font-family: 'oswaldbook';
-  margin-bottom: 8px; }
+  margin-bottom: 8px;
+  padding: 12px 12px 0; }
 
 .eb_event_list_date, .eb_event_list_time, .eb_event_list_location {
-  font-family: 'oswaldlight';
-  font-size: 24px;
-  padding-right: 8px;
-  float: left;
-  margin-bottom: 8px; }
-
-.eb_event_list_time, .eb_event_list_location {
-  padding-left: 8px;
-  position: relative; }
-  .eb_event_list_time:before, .eb_event_list_location:before {
-    content: '-';
-    position: absolute;
-    left: -3px;
-    top: 0px; }
+  display: block; }
 
 .eb_event_list_logo {
-  float: left;
-  margin: 0 18px 18px 0; }
+  float: right;
+  margin: 0 0 18px 18px; }
 
 .eb_event_list_description {
   clear: left;
   font-family: cartogothic_stdregular;
   font-size: 18px;
-  line-height: 28px; }
+  line-height: 28px;
+  padding: 8px; }
   .eb_event_list_description span {
     font-family: inherit !important;
     font-size: inherit !important; }
 
 .fb-feed-item {
-  margin-bottom: 12px;
-  padding: 6px 10px; }
+  margin-bottom: 12px; }
 
 .feeds {
-  font-size: 16px;
-  line-height: 22px; }
+  font-size: 18px;
+  line-height: 24px; }
 
 .fb-feed {
   padding: 0; }
@@ -845,14 +846,16 @@ a, a:visited {
 .fb-feed-item {
   position: relative;
   margin-left: 100px;
-  width: 666px;
-  border: 1px solid #aaa;
+  width: 866px;
   color: #293950;
-  background-color: #ddd;
   margin: auto; }
   .fb-feed-item blockquote {
     font-size: 14px;
     line-height: 20px;
     margin: auto;
     display: block;
-    background-color: #eee; }
+    background-color: #ddd;
+    border: 1px solid #aaa; }
+
+.fb-feed-item-main {
+  padding: 6px 10px; }
