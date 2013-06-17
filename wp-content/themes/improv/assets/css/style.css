@@ -786,10 +786,45 @@ a, a:visited {
   a:hover, a:visited:hover {
     color: #0088ac; }
 
+/* 	Generic Card Styles
+	------------------------------------------------------- */
+.eb_event_list_item, .fb-feed-item {
+  margin-bottom: 16px;
+  position: relative;
+  -webkit-transition: .1s all linear;
+  -moz-transition: .1s all linear;
+  -ms-transition: .1s all linear;
+  -o-transition: .1s all linear;
+  transition: .1s tall linear;
+  padding: 16px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px 3px #CCC;
+  background-color: #ddd;
+  float: right;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+  .eb_event_list_item:hover, .fb-feed-item:hover {
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
+    box-shadow: 0px 0px 10px 4px #ccc; }
+
+.event-meta {
+  position: absolute;
+  right: 100%;
+  box-shadow: -1px 0px 10px 3px #CCC;
+  border: 1px solid #ccc;
+  border-right: 1px dashed #ddd; }
+
 /* 	Events Page / Eventbrite
 	------------------------------------------------------- */
 .eb_event_list_item {
-  display: block; }
+  display: block;
+  width: 810px; }
 
 .wrapper-link {
   text-decoration: none; }
@@ -798,23 +833,22 @@ a, a:visited {
   font-family: 'oswaldlight';
   font-size: 24px;
   margin-bottom: 8px;
-  width: 100px;
+  width: 140px;
   padding: 8px;
   float: left;
-  background-color: green;
-  text-align: center; }
+  background-color: #FFD5B3;
+  text-align: center;
+  border-right: 1px dashed #AAA; }
 
 .event-main {
-  background-color: #ccc;
-  margin-bottom: 24px;
   float: right;
-  width: 850px; }
+  z-index: 1; }
 
 .eb_event_list_title {
   margin: 0;
   font-family: 'oswaldbook';
-  margin-bottom: 8px;
-  padding: 12px 12px 0; }
+  border-bottom: 1px #ccc solid;
+  padding-bottom: 16px; }
 
 .eb_event_list_date, .eb_event_list_time, .eb_event_list_location {
   display: block; }
@@ -833,22 +867,17 @@ a, a:visited {
     font-family: inherit !important;
     font-size: inherit !important; }
 
-.fb-feed-item {
-  margin-bottom: 12px; }
-
 .feeds {
   font-size: 18px;
-  line-height: 24px; }
+  line-height: 24px;
+  color: #293950; }
 
 .fb-feed {
   padding: 0; }
 
 .fb-feed-item {
-  position: relative;
   margin-left: 100px;
-  width: 866px;
-  color: #293950;
-  margin: auto; }
+  width: 866px; }
   .fb-feed-item blockquote {
     font-size: 14px;
     line-height: 20px;

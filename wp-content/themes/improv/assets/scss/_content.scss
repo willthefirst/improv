@@ -51,24 +51,66 @@ a, a:visited {
 	}
 }
 
+/* 	Generic Card Styles
+	------------------------------------------------------- */
+
+$card-padding: 16px;
+
+%card {
+	margin-bottom: $card-padding;
+	position: relative;
+	-webkit-transition: .1s all linear;
+	-moz-transition: .1s all linear;
+	-ms-transition: .1s all linear;
+	-o-transition: .1s all linear;
+	transition: .1s tall linear;
+	padding: $card-padding;
+	border: 1px solid #ccc;
+	box-shadow: 0px 0px 10px 3px #CCC;
+	background-color: #ddd;
+	float: right;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+
+	&:hover {
+		-webkit-transform: scale( 1.01 );
+		-moz-transform: scale( 1.01 );
+		-ms-transform: scale( 1.01 );
+		-o-transform: scale( 1.01 );
+		transform: scale( 1.01 );
+		box-shadow: 0px 0px 10px 4px #ccc;
+	}
+}
+
+%card-meta {
+	position: absolute;
+	right: 100%;
+	box-shadow: -1px 0px 10px 3px #CCC;
+	border: 1px solid #ccc;
+	border-right: 1px dashed #ddd;
+}
+
 /* 	Events Page / Eventbrite
 	------------------------------------------------------- */
 
-$eb-event-list-padding: 12px;
+$event_meta_w : 140px;
+$event_meta_pad : 8px;
 
 .eb_event_list_item {
 	@extend .clearfix;
+	@extend %card;
 	display: block;
+	width: $full-width - ($event_meta_w + 2*$event_meta_pad);
 }
 
 .wrapper-link {
 	text-decoration: none;
 }
 
-$event_meta_w : 100px;
-$event_meta_pad : 8px;
-
 .event-meta {
+	@extend %card-meta;
 	@extend .clearfix;
 	font-family: 'oswaldlight';
 	font-size: 24px;
@@ -76,22 +118,21 @@ $event_meta_pad : 8px;
 	width: $event_meta_w;
 	padding: $event_meta_pad;
 	float: left;
-	background-color: green;
+	background-color: #FFD5B3;
 	text-align: center;
+	border-right: 1px dashed #AAA;
 }
 
 .event-main {
-	background-color: #ccc;
-	margin-bottom: 24px;
 	float: right;
-	width: $full-width - ($event_meta_w + 2*$event_meta_pad);
+	z-index: 1;
 }
 
 .eb_event_list_title {
 	margin: 0;
 	font-family: 'oswaldbook';
-	margin-bottom: 8px;
-	padding: $eb-event-list-padding $eb-event-list-padding 0;
+	border-bottom: 1px #ccc solid;
+	padding-bottom: $card-padding;
 }
 
 $eb_event_list_info_padding: 8px;

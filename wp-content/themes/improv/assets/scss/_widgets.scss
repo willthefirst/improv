@@ -2,13 +2,10 @@
 // Sidebar, Widgets
 // --------------------------------------------------
 
-%feed-item-spacing {
-	margin-bottom: 12px;
-}
-
 .feeds {
 	font-size: 18px;
 	line-height: 24px;
+	color: $blue-dark;
 }
 
 // Facebook plugin widget
@@ -24,12 +21,9 @@ $fb_date_h: 100px;
 	@extend .clearfix;
 }
 .fb-feed-item {
-	@extend %feed-item-spacing;
-	position: relative;
+	@extend %card;
 	margin-left: $fb_date_w;
 	width: $full-width - 100;
-	color: $blue-dark;
-	margin: auto;
 
 	blockquote {
 		font-size: 14px;
