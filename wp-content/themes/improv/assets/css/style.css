@@ -813,12 +813,19 @@ a, a:visited {
     transform: scale(1.01);
     box-shadow: 0px 0px 10px 4px #ccc; }
 
-.event-meta {
+.event-meta, .fb-feed-item .fb-date {
+  padding: 8px;
   position: absolute;
   right: 100%;
   box-shadow: -1px 0px 10px 3px #CCC;
   border: 1px solid #ccc;
-  border-right: 1px dashed #ddd; }
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'oswaldlight';
+  font-size: 24px;
+  background-color: #FFD5B3; }
 
 /* 	Events Page / Eventbrite
 	------------------------------------------------------- */
@@ -830,15 +837,24 @@ a, a:visited {
   text-decoration: none; }
 
 .event-meta {
-  font-family: 'oswaldlight';
-  font-size: 24px;
   margin-bottom: 8px;
   width: 140px;
-  padding: 8px;
   float: left;
-  background-color: #FFD5B3;
   text-align: center;
   border-right: 1px dashed #AAA; }
+
+.buy-me {
+  font-family: 'cartogothic_stdbold';
+  text-transform: uppercase;
+  text-align: center;
+  width: 140px;
+  padding: 8px;
+  background-color: #ff7140;
+  bottom: 16px;
+  width: 400px;
+  float: right;
+  display: block;
+  border: 1px solid #aaa; }
 
 .event-main {
   float: right;
@@ -864,6 +880,7 @@ a, a:visited {
   line-height: 28px;
   padding: 8px; }
   .eb_event_list_description span {
+    color: initial;
     font-family: inherit !important;
     font-size: inherit !important; }
 
@@ -876,15 +893,19 @@ a, a:visited {
   padding: 0; }
 
 .fb-feed-item {
-  margin-left: 100px;
-  width: 866px; }
+  width: 766px; }
   .fb-feed-item blockquote {
     font-size: 14px;
     line-height: 20px;
     margin: auto;
     display: block;
-    background-color: #ddd;
+    background-color: #FAFAFA;
     border: 1px solid #aaa; }
+  .fb-feed-item .fb-date {
+    width: 192px;
+    letter-spacing: .05em; }
+    .fb-feed-item .fb-date a {
+      text-decoration: none; }
 
 .fb-feed-item-main {
   padding: 6px 10px; }

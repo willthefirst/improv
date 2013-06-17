@@ -14,24 +14,33 @@
 	padding: 0;
 }
 
-$fb_date_w : 100px;
-$fb_date_h: 100px;
+$fb_feed_item_w: $full-width - 200;
+$fb_date_w: $full-width - ($fb_feed_item_w + $card-meta-pad);
 
 .fb-feed {
 	@extend .clearfix;
 }
 .fb-feed-item {
 	@extend %card;
-	margin-left: $fb_date_w;
-	width: $full-width - 100;
+	width: $fb_feed_item_w;
 
 	blockquote {
 		font-size: 14px;
 		line-height: 20px;
 		margin: auto;
 		display: block;
-		background-color: #ddd;
+		background-color: #FAFAFA;
 		border: 1px solid #aaa;
+	}
+
+	.fb-date {
+		@extend %card-meta;
+		width: $fb_date_w;
+		letter-spacing: .05em;
+
+		a {
+			text-decoration: none;
+		}
 	}
 }
 

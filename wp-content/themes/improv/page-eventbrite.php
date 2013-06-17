@@ -61,6 +61,9 @@ get_header();
 	    							. $evnt->description .
 	    						"</div>
 	    					</div>
+	    					<button class='buy-me'>
+	    						Shut up and take my money.
+	    					</button>
 	    			   </a></article>\n";
 	    return $event_html;
 	};
