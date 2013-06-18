@@ -653,7 +653,8 @@ Example usage: .grid.hideoverflow. */
 /** Masthead
  -------------------------------------------------- */
 #masthead {
-  margin-bottom: 12px; }
+  margin-bottom: 12px;
+  margin-top: 18px; }
 
 #site-name {
   margin: 0;
@@ -675,6 +676,37 @@ Example usage: .grid.hideoverflow. */
   background-color: #ccc;
   float: right;
   display: none; }
+
+/* 	Share
+	------------------------------------------------------- */
+.share-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  padding: 8px 0 4px;
+  background-color: #293950;
+  z-index: 10;
+  box-shadow: 0 0px 8px 1px #000;
+  color: #ccc;
+  font-family: 'oswaldlight'; }
+  .share-bar a, .share-bar a:visited, .share-bar span {
+    color: #ccc;
+    top: -2px; }
+
+.share-buttons {
+  display: inline-block; }
+
+.share-cta {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px; }
+
+.look-at-vimeo {
+  display: inline-block;
+  position: relative;
+  margin-left: 40px; }
 
 /* 	Main Navigation
 	------------------------------------------------------- */

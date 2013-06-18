@@ -7,6 +7,7 @@
 
 #masthead {
 	margin-bottom: 12px;
+	margin-top: 18px;
 }
 
 #site-name {
@@ -34,6 +35,43 @@
 	display: none;
  }
 
+/* 	Share
+	------------------------------------------------------- */
+
+.share-bar {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	text-align: center;
+	padding: 8px 0 4px;
+	background-color: $blue-dark;
+	z-index: 10;
+	box-shadow: 0 0px 8px 1px #000;
+	color: #ccc;
+	font-family: 'oswaldlight';
+
+	a, a:visited, span {
+		color: #ccc;
+		top: -2px;
+	}
+}
+
+.share-buttons {
+	display: inline-block;
+}
+
+.share-cta {
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+}
+
+.look-at-vimeo {
+	display: inline-block;
+	position: relative;
+	margin-left: 40px;
+}
 /* 	Main Navigation
 	------------------------------------------------------- */
 #nav-main {

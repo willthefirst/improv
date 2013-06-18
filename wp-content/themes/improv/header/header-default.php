@@ -36,11 +36,27 @@ $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
 <body <?php body_class(); ?>>
 
 <div class="container grid">
+	<div class="share-bar">
+		<span class="share-cta">Get us in your feed:</span>
+		<div class="share-buttons">
+			<!-- Facebook -->
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=503246256395217";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+			<div class="fb-like" data-href="http://www.denverimprovfestival.com" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="segoe ui"></div>		<!-- Twitter -->
+			<!-- Twitter -->
+			<a href="https://twitter.com/DnvrImprovFest" class="twitter-follow-button" data-show-screen-name="false">Follow @DnvrImprovFest</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+		<a href="http://www.vimeo.com/DenverImprovFestival" target="_blank" class="look-at-vimeo">Watch videos from the festival!</a>
+	</div>
 	<header id="masthead" class="site-header clearfix">
 			<h1 id="site-name"><a class="logo" href="<?php echo home_url('/'); ?>" title="<?php _e('Denver Improv Festival Home', 'carrington-blueprint'); ?>"><?php bloginfo('name'); ?></a></h1>
-			<div class="share-section">
-				SHARE SECTION HERE (FACEBOOK, TWITTER, TUMBLR)
-			</div>
 			<nav id="nav-main" role="navigation">
 				<?php wp_nav_menu( array(
 					'container' => '',
