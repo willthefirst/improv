@@ -50,6 +50,8 @@
 	box-shadow: 0 0px 8px 1px #000;
 	color: #ccc;
 	font-family: 'oswaldlight';
+	max-height: 40px;
+	overflow: hidden;
 
 	a, a:visited, span {
 		color: #ccc;
@@ -67,10 +69,15 @@
 	margin-right: 10px;
 }
 
+.fb_edge_widget_with_comment {
+	top: 2px;
+	margin-right: 4px;
+}
+
 .look-at-vimeo {
 	display: inline-block;
 	position: relative;
-	margin-left: 40px;
+		margin-left: 40px;
 }
 /* 	Main Navigation
 	------------------------------------------------------- */
