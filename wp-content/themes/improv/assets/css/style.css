@@ -855,6 +855,7 @@ a, a:visited {
   padding: 8px;
   position: absolute;
   right: 100%;
+  top: 16px;
   box-shadow: -1px 0px 10px 3px #CCC;
   border: 1px solid #ccc;
   -webkit-box-sizing: border-box;
