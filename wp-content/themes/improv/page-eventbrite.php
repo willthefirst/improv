@@ -17,7 +17,9 @@ get_header();
 
 ?>
 
-	<h1>Tickets</h2>
+	<div class="entry-header">
+		<?php the_title('<h1 class="entry-title">', '</h1>') ?>
+	</div>
 
 	<?php
 
@@ -62,7 +64,7 @@ get_header();
 	    						"</div>
 	    					</div>
 	    					<button class='buy-me'>
-	    						Shut up and take my money.
+	    						Take my money.
 	    					</button>
 	    			   </a></article>\n";
 	    return $event_html;

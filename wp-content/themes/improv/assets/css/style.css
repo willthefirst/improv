@@ -824,6 +824,11 @@ a, a:visited {
   a:hover, a:visited:hover {
     color: #0088ac; }
 
+/* 	Page styles
+	------------------------------------------------------- */
+.entry-title {
+  text-align: center; }
+
 /* 	Generic Card Styles
 	------------------------------------------------------- */
 .eb_event_list_item, .fb-feed-item {
