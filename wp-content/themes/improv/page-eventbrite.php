@@ -30,7 +30,7 @@ get_header();
 	);
 
 	try {
-	    $events = $eb_client->event_search( $search_params);
+	    $events = $eb_client->event_search( $search_params );
 	} catch ( Exception $e ) {
 	    // Be sure to plan for potential error cases
 	    // so that your application can respond appropriately
