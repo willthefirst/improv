@@ -680,6 +680,7 @@ Example usage: .grid.hideoverflow. */
 /* 	Share
 	------------------------------------------------------- */
 .share-bar {
+  overflow: visible;
   position: fixed;
   left: 0;
   right: 0;
@@ -691,8 +692,7 @@ Example usage: .grid.hideoverflow. */
   box-shadow: 0 0px 8px 1px #000;
   color: #ccc;
   font-family: 'oswaldlight', sans-serif;
-  max-height: 40px;
-  overflow: hidden; }
+  max-height: 40px; }
   .share-bar a, .share-bar a:visited, .share-bar span {
     color: #ccc;
     top: -2px; }

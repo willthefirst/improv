@@ -39,6 +39,7 @@
 	------------------------------------------------------- */
 
 .share-bar {
+	overflow: visible;
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -51,7 +52,6 @@
 	color: #ccc;
 	font-family: 'oswaldlight', sans-serif;
 	max-height: 40px;
-	overflow: hidden;
 
 	a, a:visited, span {
 		color: #ccc;
