@@ -36,6 +36,21 @@ $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
 <body <?php body_class(); ?>>
 
 <div class="container grid">
+	<div class="crowd-suggestion-container">
+		<div class="processing"></div>
+		<div class="crowd-suggestion-fixed">
+			<span class="crowd-suggestion-prompt">
+				Can we get a suggestion for a non-geographical location?
+			</span>
+			<form class="crowd-suggestion">
+				<input class="crowd-suggestion-value" type="text" />
+				<input class="crowd-suggestion-submit" type="submit" value="Suggest" />
+			</form>
+		</div>
+		<div class="crowd-suggestion-result">
+			If your suggestion has impaired your ability to use the site, try another suggestion or just refresh the page.
+		</div>
+	</div>
 	<div class="share-bar">
 		<span class="share-cta">Get us in your feed:</span>
 		<div class="share-buttons">

@@ -654,27 +654,29 @@ class ffg {
 
 					$output .= $date;
 
-					//Another wrapper
-
-					$output .= "<div class='fb-feed-item-main'>";
-
-					// The actual users status
-					if ( $message != null  )
-						$output .= "<p class='message'>". linkify_html($message) ."</p>\n";
-					else if ( $story != null )
-						$output .= "<p class='story'>". linkify_html($story) ."</p>\n";
-
-					$output .= "</div>";
 
 					// See if there's something like a link or video to show.
 					if ( isset($item['link']) || $descript != null || $properties != null ) {
 
-						$output .= "<blockquote>\n";
+							if (isset($item['caption'])) {
+								$output .= "<blockquote class='captioned'>\n";
+							}
+							else {
+								$output .= "<blockquote>\n";
+							}
 
-							$output .= "<p>\n";
+
+							$output .= "<p class='media-container'>\n";
 
 								if ( $show_thumbnails != false && isset($item['picture']) ) {
-									$img = "<img src='". htmlentities($item['picture']) ."' class='thumbnail alignleft' />\n";
+
+									// If there's a caption, limit the image size
+									if (isset($item['caption'])) {
+										$img = "<img src='". htmlentities($item['picture']) ."' class='thumbnail alignleft' />\n";
+									}
+									else {
+										$img = "<img src='". htmlentities($item['picture']) ."' class='thumbnail alignleft' />\n";
+									}
 									if ( isset($item['link']) )
 										$output .= "<a href='". esc_attr($item['link']) ."' class='the_link'>$img</a>\n";
 								}
@@ -718,6 +720,17 @@ class ffg {
 
 					}
 
+					//Another wrapper
+
+					$output .= "<div class='fb-feed-item-main'>";
+
+					// The actual users status
+					if ( $message != null  )
+						$output .= "<p class='message'>". linkify_html($message) ."</p>\n";
+					else if ( $story != null )
+						$output .= "<p class='story'>". linkify_html($story) ."</p>\n";
+
+					$output .= "</div>";
 				$output .= "</article>\n";
 
 				// Add one to our count tally

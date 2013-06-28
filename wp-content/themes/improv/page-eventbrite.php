@@ -26,7 +26,7 @@ get_header();
 	$search_params = array(
 	    'organizer' => 'Denver Improv Festival',
 	    'sort_by' => 'date',
-
+	    'max' => 30,
 	);
 
 	try {

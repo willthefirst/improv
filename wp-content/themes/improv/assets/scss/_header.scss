@@ -49,7 +49,7 @@
 	z-index: 10;
 	box-shadow: 0 0px 8px 1px #000;
 	color: #ccc;
-	font-family: 'oswaldlight';
+	font-family: 'oswaldlight', sans-serif;
 	max-height: 40px;
 	overflow: hidden;
 
@@ -82,7 +82,7 @@
 /* 	Main Navigation
 	------------------------------------------------------- */
 #nav-main {
-	font-family: 'oswaldbook';
+	font-family: 'oswaldbook', sans-serif;
 	font-size: 24px;
 	line-height: 30px;
 	padding: 0;
@@ -146,26 +146,23 @@
 		}
 	}
 
-	$bigger-circle-padding-h: 50px;
-	$bigger-circle-padding-w: 30px;
 	$bigger-circle-border-color: #943305;
 
 	.nav-apply {
 		float: right;
-		font-family: oswaldbold;
+		font-family: oswaldbold, sans-serif;
+		font-weight: normal;
 		background-color: $orange;
 		@extend %border-radius;
 		position: absolute;
 		right: 0;
-		border: 2px solid $bigger-circle-border-color;
+		border: 1px solid $bigger-circle-border-color;
 
 		&:hover {
 			background-color: $orange;
-			padding: $bigger-circle-padding-h $bigger-circle-padding-w;
-			top: -($bigger-circle-padding-h);
-			right: -($bigger-circle-padding-w);
-			border-radius: $bigger-circle-padding-w + $bigger-circle-padding-h;
-
+			border-radius: 25px;
+			padding-left: 50px;
+			padding-right: 50px;
 			color: $bigger-circle-border-color;
 		}
 
@@ -175,4 +172,152 @@
 	}
 }
 
+/* 	Crowd Suggestion!
+	------------------------------------------------------- */
+
+	@-webkit-keyframes rotating {
+	    0%{
+	        -webkit-transform: rotateX(0deg);
+	    }
+	    100%{
+	        -webkit-transform: rotateX(360deg);
+	    }
+	}
+
+	@-moz-keyframes rotating {
+	    from{
+	        -moz-transform: rotateX(0deg);
+	    }
+	    to{
+	        -moz-transform: rotateX(360deg);
+	    }
+	}
+
+	@-o-keyframes rotating {
+	    from{
+	        -o-transform: rotateX(0deg);
+	    }
+	    to{
+	        -o-transform: rotateX(360deg);
+	    }
+	}
+
+	@-ms-keyframes rotating {
+	    from{
+	        -ms-transform: rotateX(0deg);
+	    }
+	    to{
+	        -ms-transform: rotateX(360deg);
+	    }
+	}
+
+	@-keyframes rotating {
+	    from{
+	        transform: rotateX(0deg);
+	    }
+	    to{
+	        transform: rotateX(360deg);
+	    }
+	}
+
+.crowd-suggestion-container {
+	background-color: $blue-light;
+	padding: 5px 10px 5px 30px;
+	display: block;
+	position: fixed;
+	left: -20px;
+	top: 200px;
+	@extend %border-radius;
+	border: 1px solid #005892;
+	color: #fff;
+	z-index: 1;
+	overflow: hidden;
+	width: 122px;
+	-webkit-transition: width .2s ease;
+	-moz-transition: width .2s ease;
+	-ms-transition: width .2s ease;
+	-o-transition: width .2s ease;
+	transition: width .2s ease;
+	font-size: 16px;
+	line-height: 20px;
+
+	&:hover {
+		width: 280px;
+	}
+
+	input {
+		display: block;
+		clear: both;
+
+	}
+
+	&.spin {
+		box-shadow: none;
+		-webkit-animation: rotating .7s linear infinite;
+		-moz-animation: rotating .7s linear infinite;
+		-o-animation: rotating .7s linear infinite;
+		-ms-animation: rotating .7s linear infinite;
+		animation: rotating .7s linear infinite;
+	}
+}
+
+.processing {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(2,2,2,0.8);
+}
+.crowd-suggestion-fixed {
+	width: 275px;
+}
+
+.crowd-suggestion {
+	width: 140px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.crowd-suggestion-prompt {
+	width: 130px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.crowd-suggestion-value {
+	@extend %border-radius;
+	border: 1px solid #888;
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	font-family: 'oswaldbook' , sans-serif;
+	font-size: 16px;
+	padding: 2px 4px;
+	margin-bottom: 6px;
+}
+
+.crowd-suggestion-submit {
+	display: block;
+	border: 1px solid #ccc;
+	background-color: $blue-dark;
+	@extend %border-radius;
+	color: #fff;
+	padding: 2px 4px;
+	width: 100%;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	font-family: 'oswaldbook' , sans-serif;
+}
+
+.crowd-suggestion-result {
+	padding: 4px;
+	border-top: 1px solid #ccc;
+	margin-top: 4px;
+	display: none;
+	font-size: 14px;
+	line-height: 18px;
+	font-family: 'cartogothic_stditalic', sans-serif;
+}
 

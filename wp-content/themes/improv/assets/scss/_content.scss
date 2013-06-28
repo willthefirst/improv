@@ -1,7 +1,7 @@
 /* 	Content - Posts, Pages, Comments
 	------------------------------------------------------- */
 body {
-	font-family: 'cartogothic_stdregular';
+	font-family: 'cartogothic_stdregular', sans-serif;
 	font-size: 20px;
 	line-height: 28px;
 }
@@ -11,31 +11,39 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-	font-family: 'oswaldbook';
+	font-family: 'oswaldbook', sans-serif;
 	font-size: 42px;
 	line-height: 50px;
+	font-weight: normal;
 }
 
 h2 {
-	font-family: 'oswaldlight';
+	font-family: 'oswaldlight', sans-serif;
 	font-size: 36px;
 	line-height: 44px;
+	font-weight: normal;
 }
 
 h3 {
-	font-family: 'oswaldlight';
+	font-family: 'oswaldlight', sans-serif;
 	font-size: 28px;
 	line-height: 36px;
+	font-weight: normal;
 }
 
 h4 {
-	font-family: 'oswaldbook';
+	font-family: 'oswaldbook', sans-serif;
 	font-size: 20px;
 	line-height: 28px;
+	font-weight: normal;
 }
 
 em {
-	font-family: cartogothic_stditalic;
+	font-family: cartogothic_stditalic, sans-serif;
+}
+
+strong {
+	font-weight: normal;
 }
 
 a, a:visited {
@@ -104,7 +112,7 @@ $card-meta-pad : 8px;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
-	font-family: 'oswaldlight';
+	font-family: 'oswaldlight', sans-serif;
 	font-size: 24px;
 	background-color: #FFD5B3;
 }
@@ -156,7 +164,7 @@ $event_meta_w : 140px;
 
 .eb_event_list_title {
 	margin: 0;
-	font-family: 'oswaldbook';
+	font-family: 'oswaldbook', sans-serif;
 	border-bottom: 1px #ccc solid;
 	padding-bottom: $card-pad;
 }
@@ -173,12 +181,10 @@ $eb_event_list_info_padding: 8px;
 
 .eb_event_list_time {
 	@extend %eb_event_list_info;
-	@extend %eb_event_list_info_divider;
 }
 
 .eb_event_list_location {
 	@extend %eb_event_list_info;
-	@extend %eb_event_list_info_divider;
 }
 
 .eb_event_list_logo {
@@ -188,7 +194,7 @@ $eb_event_list_info_padding: 8px;
 
 .eb_event_list_description {
 	clear: left;
-	font-family: cartogothic_stdregular;
+	font-family: cartogothic_stdregular, sans-serif;
 	font-size: 18px;
 	line-height: 28px;
 	padding: $eb_event_list_info_padding;
