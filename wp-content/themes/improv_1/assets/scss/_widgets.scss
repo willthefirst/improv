@@ -1,0 +1,85 @@
+// --------------------------------------------------
+// Sidebar, Widgets
+// --------------------------------------------------
+
+.feeds {
+	font-size: 18px;
+	line-height: 24px;
+	color: $blue-dark;
+}
+
+// Facebook plugin widget
+
+.fb-feed {
+	padding: 0;
+}
+
+$fb_feed_item_w: $full-width - 200;
+$fb_date_w: $full-width - ($fb_feed_item_w + $card-meta-pad);
+
+.fb-feed {
+	@extend .clearfix;
+}
+.fb-feed-item {
+	@extend %card;
+	width: $fb_feed_item_w;
+	min-height: 92px;
+
+	blockquote {
+		font-size: 14px;
+		line-height: 20px;
+		display: block;
+		background-color: #FAFAFA;
+		border: 1px solid #aaa;
+		float: right;
+		padding: 4px 10px;
+		margin: 10px 0 12px 10px;
+
+		img {
+			max-width: 200px;
+			margin: 0;
+		}
+
+		.caption {
+			margin-top: -10px;
+		}
+
+		.the_link {
+			margin: 0;
+		}
+
+		.media-container {
+			margin: 0;
+		}
+
+		&.captioned {
+
+
+			img {
+				max-height: 100px;
+				width: auto;
+				margin: 0 10px 10px 0;
+			}
+
+			.the_link {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	.fb-date {
+		@extend %card-meta;
+		width: $fb_date_w;
+		letter-spacing: .05em;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.fb-feed-item-main {
+	padding: 6px 10px;
+}
+
+

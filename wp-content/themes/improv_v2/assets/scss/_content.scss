@@ -1,0 +1,210 @@
+/* 	Content - Posts, Pages, Comments
+	------------------------------------------------------- */
+body {
+	font-family: 'cartogothic_stdregular', sans-serif;
+	font-size: 20px;
+	line-height: 28px;
+}
+
+h1, h2, h3, h4, h5 {
+	color: $blue-dark;
+}
+
+h1 {
+	font-family: 'oswaldbook', sans-serif;
+	font-size: 42px;
+	line-height: 50px;
+	font-weight: normal;
+}
+
+h2 {
+	font-family: 'oswaldlight', sans-serif;
+	font-size: 36px;
+	line-height: 44px;
+	font-weight: normal;
+}
+
+h3 {
+	font-family: 'oswaldlight', sans-serif;
+	font-size: 28px;
+	line-height: 36px;
+	font-weight: normal;
+}
+
+h4 {
+	font-family: 'oswaldbook', sans-serif;
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: normal;
+}
+
+em {
+	font-family: cartogothic_stditalic, sans-serif;
+}
+
+strong {
+	font-weight: normal;
+}
+
+a, a:visited {
+	color: $blue-dark;
+	-webkit-transition: .1s color linear;
+	-moz-transition: .1s color linear;
+	-ms-transition: .1s color linear;
+	-o-transition: .1s color linear;
+	transition: .1s color linear;
+
+	&:hover {
+		color: $blue-light;
+	}
+}
+
+/* 	Page styles
+	------------------------------------------------------- */
+
+.entry-title {
+	text-align: center;
+}
+
+
+/* 	Generic Card Styles
+	------------------------------------------------------- */
+
+$card-pad: 16px;
+$card-meta-pad : 8px;
+
+%card {
+	margin-bottom: $card-pad;
+	position: relative;
+	-webkit-transition: .1s all linear;
+	-moz-transition: .1s all linear;
+	-ms-transition: .1s all linear;
+	-o-transition: .1s all linear;
+	transition: .1s tall linear;
+	padding: $card-pad;
+	border: 1px solid #ccc;
+	box-shadow: 0px 0px 10px 3px #CCC;
+	background-color: #ddd;
+	float: right;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+
+	&:hover {
+		-webkit-transform: scale( 1.01 );
+		-moz-transform: scale( 1.01 );
+		-ms-transform: scale( 1.01 );
+		-o-transform: scale( 1.01 );
+		transform: scale( 1.01 );
+		box-shadow: 0px 0px 10px 4px #ccc;
+	}
+}
+
+%card-meta {
+	padding: $card-meta-pad;
+	position: absolute;
+	right: 100%;
+	top: $card-pad;
+	box-shadow: -1px 0px 10px 3px #CCC;
+	border: 1px solid #ccc;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'oswaldlight', sans-serif;
+	font-size: 24px;
+	background-color: #FFD5B3;
+}
+
+/* 	Events Page / Eventbrite
+	------------------------------------------------------- */
+
+$event_meta_w : 140px;
+
+.eb_event_list_item {
+	@extend .clearfix;
+	@extend %card;
+	display: block;
+	width: $full-width - ($event_meta_w + 2*$card-meta-pad);
+}
+
+.wrapper-link {
+	text-decoration: none;
+}
+
+.event-meta {
+	@extend %card-meta;
+	@extend .clearfix;
+	margin-bottom: 8px;
+	width: $event_meta_w;
+	float: left;
+	text-align: center;
+	border-right: 1px dashed #AAA;
+}
+
+.buy-me {
+	font-family: 'cartogothic_stdbold';
+	text-transform: uppercase;
+	text-align: center;
+	width: $event_meta_w;
+	padding: $card-meta-pad;
+	background-color: $orange;
+	bottom: $card-pad;
+	width: 400px;
+	float: right;
+	display: block;
+	border: 1px solid #aaa;
+}
+
+.event-main {
+	float: right;
+	z-index: 1;
+}
+
+.eb_event_list_title {
+	margin: 0;
+	font-family: 'oswaldbook', sans-serif;
+	border-bottom: 1px #ccc solid;
+	padding-bottom: $card-pad;
+}
+
+$eb_event_list_info_padding: 8px;
+
+%eb_event_list_info {
+	display: block;
+}
+
+.eb_event_list_date {
+	@extend %eb_event_list_info;
+}
+
+.eb_event_list_time {
+	@extend %eb_event_list_info;
+}
+
+.eb_event_list_location {
+	@extend %eb_event_list_info;
+}
+
+.eb_event_list_logo {
+	float: right;
+	margin: 0 0 18px 18px;
+}
+
+.eb_event_list_description {
+	clear: left;
+	font-family: cartogothic_stdregular, sans-serif;
+	font-size: 18px;
+	line-height: 28px;
+	padding: $eb_event_list_info_padding;
+
+	a:hover {
+	}
+	span {
+		color: initial;
+		font-family: inherit !important; //Override raw data handed back from Eventbrite (spans with inline styles)
+		font-size: inherit !important; //Override raw data handed back from Eventbrite (spans with inline styles)
+	}
+
+}
