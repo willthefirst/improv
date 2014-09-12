@@ -5,56 +5,48 @@
   src: url("../fonts/cartogothicstd-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cartogothicstd-bold-webfont.woff") format("woff"), url("../fonts/cartogothicstd-bold-webfont.ttf") format("truetype"), url("../fonts/cartogothicstd-bold-webfont.svg#cartogothic_stdbold") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'cartogothic_stdbold_italic';
   src: url("../fonts/cartogothicstd-bolditalic-webfont.eot");
   src: url("../fonts/cartogothicstd-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cartogothicstd-bolditalic-webfont.woff") format("woff"), url("../fonts/cartogothicstd-bolditalic-webfont.ttf") format("truetype"), url("../fonts/cartogothicstd-bolditalic-webfont.svg#cartogothic_stdbold_italic") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'cartogothic_stdregular';
   src: url("../fonts/cartogothicstd-book-webfont.eot");
   src: url("../fonts/cartogothicstd-book-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cartogothicstd-book-webfont.woff") format("woff"), url("../fonts/cartogothicstd-book-webfont.ttf") format("truetype"), url("../fonts/cartogothicstd-book-webfont.svg#cartogothic_stdregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'cartogothic_stditalic';
   src: url("../fonts/cartogothicstd-italic-webfont.eot");
   src: url("../fonts/cartogothicstd-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cartogothicstd-italic-webfont.woff") format("woff"), url("../fonts/cartogothicstd-italic-webfont.ttf") format("truetype"), url("../fonts/cartogothicstd-italic-webfont.svg#cartogothic_stditalic") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'oswald_stencilregular';
   src: url("../fonts/oswald-stencil-webfont.eot");
   src: url("../fonts/oswald-stencil-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/oswald-stencil-webfont.woff") format("woff"), url("../fonts/oswald-stencil-webfont.ttf") format("truetype"), url("../fonts/oswald-stencil-webfont.svg#oswald_stencilregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'oswaldbook';
   src: url("../fonts/oswald-regular-webfont.eot");
   src: url("../fonts/oswald-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/oswald-regular-webfont.woff") format("woff"), url("../fonts/oswald-regular-webfont.ttf") format("truetype"), url("../fonts/oswald-regular-webfont.svg#oswaldbook") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'oswaldbold';
   src: url("../fonts/oswald-bold-webfont.eot");
   src: url("../fonts/oswald-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/oswald-bold-webfont.woff") format("woff"), url("../fonts/oswald-bold-webfont.ttf") format("truetype"), url("../fonts/oswald-bold-webfont.svg#oswaldbold") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'oswaldlight';
   src: url("../fonts/oswald-light-webfont.eot");
   src: url("../fonts/oswald-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/oswald-light-webfont.woff") format("woff"), url("../fonts/oswald-light-webfont.ttf") format("truetype"), url("../fonts/oswald-light-webfont.svg#oswaldlight") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 #nav-main li, #nav-main .nav-apply, .crowd-suggestion-container, .crowd-suggestion-value, .crowd-suggestion-submit {
   border-radius: 4px; }
 
@@ -122,19 +114,7 @@ body {
 
 /* =============================================================================
    Links
-   ========================================================================== */
-a {
-  color: #00e; }
-
-a:visited {
-  color: #551a8b; }
-
-a:hover {
-  color: #06e; }
-
-a:focus {
-  outline: thin dotted; }
-
+ ========================================================================== */
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active {
   outline: 0; }
@@ -404,7 +384,6 @@ td {
 
   @page {
     margin: 0.5cm; }
-
   p, h2, h3 {
     orphans: 3;
     widows: 3; }
@@ -687,9 +666,8 @@ Example usage: .grid.hideoverflow. */
   top: 0;
   text-align: center;
   padding: 8px 0 4px;
-  background-color: #293950;
+  background-color: #000;
   z-index: 10;
-  box-shadow: 0 0px 8px 1px #000;
   color: #ccc;
   font-family: 'oswaldlight', sans-serif;
   max-height: 40px; }
@@ -729,7 +707,8 @@ Example usage: .grid.hideoverflow. */
   #nav-main a {
     display: block;
     float: left;
-    text-decoration: none; }
+    text-decoration: none;
+    color: #000; }
   #nav-main ul {
     display: block;
     position: relative; }
@@ -743,9 +722,9 @@ Example usage: .grid.hideoverflow. */
     -ms-transition: 0.1s linear all;
     transition: 0.1s linear all; }
     #nav-main li:hover {
-      background-color: #AED5FF; }
+      background-color: #4b367a; }
       #nav-main li:hover a {
-        color: inherit; }
+        color: #fff; }
       #nav-main li:hover > ul {
         display: block; }
     #nav-main li a {
@@ -768,12 +747,12 @@ Example usage: .grid.hideoverflow. */
     float: right;
     font-family: oswaldbold, sans-serif;
     font-weight: normal;
-    background-color: #ff7140;
+    background-color: #ff7438;
     position: absolute;
     right: 0;
     border: 1px solid #943305; }
     #nav-main .nav-apply:hover {
-      background-color: #ff7140;
+      background-color: #ff7438;
       border-radius: 25px;
       padding-left: 50px;
       padding-right: 50px;
@@ -786,47 +765,37 @@ Example usage: .grid.hideoverflow. */
 @-webkit-keyframes rotating {
   0% {
     -webkit-transform: rotateX(0deg); }
-
   100% {
     -webkit-transform: rotateX(360deg); } }
-
 @-moz-keyframes rotating {
   from {
     -moz-transform: rotateX(0deg); }
-
   to {
     -moz-transform: rotateX(360deg); } }
-
 @-o-keyframes rotating {
   from {
     -o-transform: rotateX(0deg); }
-
   to {
     -o-transform: rotateX(360deg); } }
-
 @-ms-keyframes rotating {
   from {
     -ms-transform: rotateX(0deg); }
-
   to {
     -ms-transform: rotateX(360deg); } }
-
 @-keyframes rotating {
   from {
     transform: rotateX(0deg); }
 
   to {
     transform: rotateX(360deg); } }
-
 .crowd-suggestion-container {
   display: none;
-  background-color: #0088ac;
+  background-color: #4b367a;
   padding: 5px 10px 5px 30px;
   display: block;
   position: fixed;
   left: -20px;
   top: 200px;
-  border: 1px solid #005892;
   color: #fff;
   z-index: 1;
   overflow: hidden;
@@ -886,7 +855,7 @@ Example usage: .grid.hideoverflow. */
 .crowd-suggestion-submit {
   display: block;
   border: 1px solid #ccc;
-  background-color: #293950;
+  background-color: #716394;
   color: #fff;
   padding: 2px 4px;
   width: 100%;
@@ -908,10 +877,11 @@ Example usage: .grid.hideoverflow. */
 body {
   font-family: 'cartogothic_stdregular', sans-serif;
   font-size: 20px;
-  line-height: 28px; }
+  line-height: 28px;
+  color: #000; }
 
 h1, h2, h3, h4, h5 {
-  color: #293950; }
+  color: #4b367a; }
 
 h1 {
   font-family: 'oswaldbook', sans-serif;
@@ -944,19 +914,23 @@ strong {
   font-weight: normal; }
 
 a, a:visited {
-  color: #293950;
+  color: #ff7438;
   -webkit-transition: .1s color linear;
   -moz-transition: .1s color linear;
   -ms-transition: .1s color linear;
   -o-transition: .1s color linear;
-  transition: .1s color linear; }
+  transition: .1s color linear;
+  text-decoration: none; }
   a:hover, a:visited:hover {
-    color: #0088ac; }
+    text-decoration: underline; }
 
 /* 	Page styles
 	------------------------------------------------------- */
-.entry-title {
-  text-align: center; }
+.entry-title, .entry-content {
+  text-align: right; }
+
+.site-footer {
+  font-size: 15px; }
 
 /* 	Generic Card Styles
 	------------------------------------------------------- */
@@ -977,28 +951,20 @@ a, a:visited {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
-  .eb_event_list_item:hover, .fb-feed-item:hover {
-    -webkit-transform: scale(1.01);
-    -moz-transform: scale(1.01);
-    -ms-transform: scale(1.01);
-    -o-transform: scale(1.01);
-    transform: scale(1.01);
-    box-shadow: 0px 0px 10px 4px #ccc; }
 
 .event-meta, .fb-feed-item .fb-date {
   padding: 8px;
   position: absolute;
   right: 100%;
   top: 16px;
-  box-shadow: -1px 0px 10px 3px #CCC;
-  border: 1px solid #ccc;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'oswaldlight', sans-serif;
   font-size: 24px;
-  background-color: #FFD5B3; }
+  background-color: #4b367a;
+  color: #fff; }
 
 /* 	Events Page / Eventbrite
 	------------------------------------------------------- */
@@ -1022,7 +988,8 @@ a, a:visited {
   text-align: center;
   width: 140px;
   padding: 8px;
-  background-color: #ff7140;
+  background-color: #ff7438;
+  color: #white;
   bottom: 16px;
   width: 400px;
   float: right;
@@ -1069,11 +1036,8 @@ a, a:visited {
   width: 766px;
   min-height: 92px; }
   .fb-feed-item blockquote {
-    font-size: 14px;
-    line-height: 20px;
     display: block;
     background-color: #FAFAFA;
-    border: 1px solid #aaa;
     float: right;
     padding: 4px 10px;
     margin: 10px 0 12px 10px; }
@@ -1100,3 +1064,8 @@ a, a:visited {
 
 .fb-feed-item-main {
   padding: 6px 10px; }
+
+.fb_iframe_widget {
+  top: -4px; }
+
+/*# sourceMappingURL=style.css.map */

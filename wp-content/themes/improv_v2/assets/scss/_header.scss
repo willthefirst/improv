@@ -46,9 +46,8 @@
 	top: 0;
 	text-align: center;
 	padding: 8px 0 4px;
-	background-color: $blue-dark;
+	background-color: #000;
 	z-index: 10;
-	box-shadow: 0 0px 8px 1px #000;
 	color: #ccc;
 	font-family: 'oswaldlight', sans-serif;
 	max-height: 40px;
@@ -95,6 +94,7 @@
 		display: block;
 		float: left;
 		text-decoration: none;
+		color: #000;
 	}
 
 	ul {
@@ -110,10 +110,10 @@
 		@include transition(0.1s linear all);
 
 		&:hover {
-			background-color: #AED5FF;
+			background-color: $purple;
 
 			a {
-				color: inherit;
+				color: #fff;
 			}
 			&> ul {
 				display: block;
@@ -222,14 +222,13 @@
 
 .crowd-suggestion-container {
 	display: none;
-	background-color: $blue-light;
+	background-color: $purple;
 	padding: 5px 10px 5px 30px;
 	display: block;
 	position: fixed;
 	left: -20px;
 	top: 200px;
 	@extend %border-radius;
-	border: 1px solid #005892;
 	color: #fff;
 	z-index: 1;
 	overflow: hidden;
@@ -302,7 +301,7 @@
 .crowd-suggestion-submit {
 	display: block;
 	border: 1px solid #ccc;
-	background-color: $blue-dark;
+	background-color: $purple-l;
 	@extend %border-radius;
 	color: #fff;
 	padding: 2px 4px;

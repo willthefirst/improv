@@ -26,11 +26,8 @@ $fb_date_w: $full-width - ($fb_feed_item_w + $card-meta-pad);
 	min-height: 92px;
 
 	blockquote {
-		font-size: 14px;
-		line-height: 20px;
 		display: block;
 		background-color: #FAFAFA;
-		border: 1px solid #aaa;
 		float: right;
 		padding: 4px 10px;
 		margin: 10px 0 12px 10px;
@@ -82,4 +79,6 @@ $fb_date_w: $full-width - ($fb_feed_item_w + $card-meta-pad);
 	padding: 6px 10px;
 }
 
-
+.fb_iframe_widget {
+	top: -4px;
+}
