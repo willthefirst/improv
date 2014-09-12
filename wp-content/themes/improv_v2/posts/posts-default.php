@@ -20,9 +20,9 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 get_header();
 ?>
 
-<a class="banner c4-1234">
+<!-- <a class="banner c4-1234">
 	<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-</a>
+</a> -->
 <div class="row feeds">
 	<section class="c6-12">
 		<h2>Our Tweets</h2>

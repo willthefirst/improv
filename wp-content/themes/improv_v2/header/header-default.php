@@ -71,7 +71,13 @@ $title_description = (is_home() && !empty($blog_desc) ? ' - '.$blog_desc : '');
 		<a href="http://www.vimeo.com/DenverImprovFestival" target="_blank" class="look-at-vimeo">Watch videos from the festival!</a>
 	</div>
 	<header id="masthead" class="site-header clearfix">
-			<h1 id="site-name"><a class="logo" href="<?php echo home_url('/'); ?>" title="<?php _e('Denver Improv Festival Home', 'carrington-blueprint'); ?>"><?php bloginfo('name'); ?></a></h1>
+<!-- 			<h1 id="site-name">
+				<a class="logo" href="<?php echo home_url('/'); ?>" title="<?php _e('Denver Improv Festival Home', 'carrington-blueprint'); ?>"><?php bloginfo('name'); ?>
+				</a>
+			</h1> -->
+			<a href="<?php echo home_url('/'); ?>" title="<?php _e('Denver Improv Festival Home', 'carrington-blueprint'); ?>" class="banner c4-1234">
+				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+			</a>
 			<nav id="nav-main" role="navigation">
 				<?php wp_nav_menu( array(
 					'container' => '',

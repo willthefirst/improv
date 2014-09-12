@@ -67,6 +67,7 @@ $fb_date_w: $full-width - ($fb_feed_item_w + $card-meta-pad);
 	.fb-date {
 		@extend %card-meta;
 		width: $fb_date_w;
+		color: #fff;
 		letter-spacing: .05em;
 
 		a {

@@ -944,7 +944,6 @@ a, a:visited {
   transition: .1s tall linear;
   padding: 16px;
   border: 1px solid #ccc;
-  box-shadow: 0px 0px 10px 3px #CCC;
   background-color: #ddd;
   float: right;
   -webkit-box-sizing: border-box;
@@ -979,8 +978,7 @@ a, a:visited {
   margin-bottom: 8px;
   width: 140px;
   float: left;
-  text-align: center;
-  border-right: 1px dashed #AAA; }
+  text-align: center; }
 
 .buy-me {
   font-family: 'cartogothic_stdbold';
@@ -989,7 +987,7 @@ a, a:visited {
   width: 140px;
   padding: 8px;
   background-color: #ff7438;
-  color: #white;
+  color: #fff;
   bottom: 16px;
   width: 400px;
   float: right;
@@ -1058,6 +1056,7 @@ a, a:visited {
       margin-bottom: 8px; }
   .fb-feed-item .fb-date {
     width: 192px;
+    color: #fff;
     letter-spacing: .05em; }
     .fb-feed-item .fb-date a {
       text-decoration: none; }
