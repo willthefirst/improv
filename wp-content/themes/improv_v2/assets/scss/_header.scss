@@ -87,12 +87,8 @@
 	padding: 0;
 	letter-spacing: 0.05em;
 	width: 100%;
-	display: block;
-	float: left;
 	text-transform: uppercase;
 	a {
-		display: block;
-		float: left;
 		text-decoration: none;
 		color: #000;
 	}
@@ -100,12 +96,12 @@
 	ul {
 		display: block;
 		position: relative;
+		text-align: center;
 	}
 
 	li {
 		position: relative;
-		display: block;
-		float: left;
+		display: inline-block;
 		@extend %border-radius;
 		@include transition(0.1s linear all);
 

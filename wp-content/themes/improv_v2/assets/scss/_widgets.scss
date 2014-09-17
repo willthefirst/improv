@@ -5,7 +5,7 @@
 .feeds {
 	font-size: 18px;
 	line-height: 24px;
-	color: $blue-dark;
+	color: #000;
 }
 
 // Facebook plugin widget
@@ -72,6 +72,7 @@ $fb_date_w: $full-width - ($fb_feed_item_w + $card-meta-pad);
 
 		a {
 			text-decoration: none;
+			color: #fff;
 		}
 	}
 }

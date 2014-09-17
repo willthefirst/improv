@@ -701,21 +701,17 @@ Example usage: .grid.hideoverflow. */
   padding: 0;
   letter-spacing: 0.05em;
   width: 100%;
-  display: block;
-  float: left;
   text-transform: uppercase; }
   #nav-main a {
-    display: block;
-    float: left;
     text-decoration: none;
     color: #000; }
   #nav-main ul {
     display: block;
-    position: relative; }
+    position: relative;
+    text-align: center; }
   #nav-main li {
     position: relative;
-    display: block;
-    float: left;
+    display: inline-block;
     -webkit-transition: 0.1s linear all;
     -moz-transition: 0.1s linear all;
     -o-transition: 0.1s linear all;
@@ -927,7 +923,7 @@ a, a:visited {
 /* 	Page styles
 	------------------------------------------------------- */
 .entry-title, .entry-content {
-  text-align: right; }
+  text-align: left; }
 
 .site-footer {
   font-size: 15px; }
@@ -1025,7 +1021,7 @@ a, a:visited {
 .feeds {
   font-size: 18px;
   line-height: 24px;
-  color: #293950; }
+  color: #000; }
 
 .fb-feed {
   padding: 0; }
@@ -1059,7 +1055,8 @@ a, a:visited {
     color: #fff;
     letter-spacing: .05em; }
     .fb-feed-item .fb-date a {
-      text-decoration: none; }
+      text-decoration: none;
+      color: #fff; }
 
 .fb-feed-item-main {
   padding: 6px 10px; }
